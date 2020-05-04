@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Kakeboss"
+    }
+  },
+  "defaultProject": "Kakeboss",
+  "cli": {
+    "analytics": false
+  }
 }

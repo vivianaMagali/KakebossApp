@@ -3,10 +3,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import {AngularFireModule} from 'angularfire2';
-import {AngularFireDatabaseModule} from 'angularfire2/database';
-import {firebaseConfig} from './firebase';
-import {AngularFireDatabase} from 'angularfire2/database';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
+
 
 @NgModule({
   declarations: [
@@ -15,11 +16,13 @@ import {AngularFireDatabase} from 'angularfire2/database';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(firebaseConfig, 'kakeboss-5c11c'),
-    AngularFireDatabaseModule
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAnalyticsModule,
+    AngularFirestoreModule
+
   ],
   providers: [
-    AngularFireDatabase
+  
   ],
   bootstrap: [AppComponent]
 })
