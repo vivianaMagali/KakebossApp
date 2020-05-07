@@ -12,15 +12,23 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import {MatInputModule} from '@angular/material/input';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { ExpensesComponent } from './components/expenses/expenses.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatRadioModule} from '@angular/material/radio';
+
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSelectModule} from '@angular/material/select';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    ExpensesComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +41,11 @@ import {MatButtonModule} from '@angular/material/button';
     FormsModule,
     MatInputModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+    NoopAnimationsModule,
+    MatSelectModule,
+    MatRadioModule
   ],
   providers: [
   

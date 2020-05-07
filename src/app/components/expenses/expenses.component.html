@@ -1,0 +1,23 @@
+<div class="container">
+    <mat-label class="title">Add Expense</mat-label>
+
+    <mat-form-field class="example-full-width">
+        <mat-label >Name expense</mat-label>
+        <input type="text" matInput>
+    </mat-form-field>
+
+    
+    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" >
+        <mat-label >Change category:</mat-label>
+        <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">{{season}}</mat-radio-button>
+    </mat-radio-group>
+
+    <mat-form-field class="example-full-width">
+        <mat-label >Add expense</mat-label>
+        <input type="number" matInput>
+    </mat-form-field>€
+    
+    <button mat-button >Acept</button>
+</div>
+
+  
