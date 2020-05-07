@@ -1,19 +1,19 @@
-<h3>Incomes</h3>
-
 <!--*ngFor="let item of items | async"-->
 <mat-card class="incomes-card">
     <mat-card-header>
-      <mat-card-title>Incomes</mat-card-title>
-      <mat-card-subtitle>Here you can see your incomes</mat-card-subtitle>
-      <div class="buttons">
-        <mat-card-actions>
-            <button mat-button>Add</button>
+        
+            <mat-card-title>Incomes</mat-card-title>
+            <mat-card-subtitle>Here you can see your incomes</mat-card-subtitle>
+        <div class="buttons">
+            <mat-card-actions>
+                <button mat-button>Add</button>
             <!--any more buttons?-->
-        </mat-card-actions>
-      </div>
+            </mat-card-actions>
+        </div>
     </mat-card-header>
     <mat-card-content>
-        <mat-list>
+        <mat-list> <!--ngFor to the incomes table-->
+            
             <mat-list-item>Item 1</mat-list-item>
             <mat-divider></mat-divider>
             <mat-list-item>Item 2</mat-list-item>
