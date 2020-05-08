@@ -1,0 +1,46 @@
+.container {
+    width: 50%;
+    margin: auto;
+    display: grid;
+    padding: 30px;
+    margin-top: 150px;
+    background-color: rgb(245, 245, 245);
+    box-shadow: 2px 2px 10px rgb(223, 223, 223);  
+}
+
+.form-group{
+    display: grid;
+    width: 100%;
+    margin: 10px;
+}
+
+.form-group input{
+    padding: 6px;
+}
+
+.form-group label{
+    font-size: 18px;
+}
+
+.error {
+    color: red;
+    margin-top: 20px;
+}
+
+.text {
+    justify-self: center;
+    text-align: center;
+    font-size: 25px;
+}
+
+
+.buttons-container button {
+    width: 100%;
+    padding: 5px;
+    margin: 5px;
+    font-size: 12px;
+}
+.buttons-container button:hover{
+    cursor: pointer;
+    background-color: greenyellow;
+}
