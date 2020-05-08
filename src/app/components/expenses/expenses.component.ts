@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { db } from 'src/app/services/utils/firebase';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-expenses',
@@ -6,11 +8,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./expenses.component.css']
 })
 export class ExpensesComponent implements OnInit {
-
-  seasons: string[] = ['Supervivencia', 'Ocio y vicio', 'Cultura', 'Extras'];
+ 
+  name_expense: string;
+  amount: number;
+  chosenCategory: string;
+  categories: string[] = ['Supervivencia', 'Ocio y vicio', 'Cultura', 'Extras'];
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
+  addExpense(){
+    var user = firebase.auth().currentUser;
+      if (user) {
+       db.collection("usuarios").doc(user.uid).collection("expenses").add({
+            name_expense: this.name_expense,
+            amount: this.amount,
+            category: this.chosenCategory
+      })
+    }
+  }
+
+
 
 }

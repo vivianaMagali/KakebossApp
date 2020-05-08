@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { environment } from '../environments/environment';
+import { config } from './services/utils/firebase'
 
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { LoginComponent } from './components/login/login.component';
@@ -33,7 +33,7 @@ import {MatSelectModule} from '@angular/material/select';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(config),
     AngularFireAnalyticsModule,
     AngularFirestoreModule,
     AngularFireAuthModule,

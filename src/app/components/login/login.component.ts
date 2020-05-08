@@ -2,6 +2,8 @@ import { Component, OnInit, NgZone } from '@angular/core';
 import { FormBuilder, Validators,FormControl} from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
+import { db } from 'src/app/services/utils/firebase';
+import * as firebase from 'firebase';
 
 @Component({
  selector: 'app-login',
@@ -40,18 +42,21 @@ export class LoginComponent implements OnInit {
 }})
 }
 
+
+
 createUser() {
-  this.afAuth.createUserWithEmailAndPassword(this.loginForm.value.username, this.loginForm.value.password).then(() => {
-    this.router.navigate(['/inicio']);
-  }).catch(response => {
-    this.errorMessage = response.message;
-});
+  this.afAuth.createUserWithEmailAndPassword(this.loginForm.value.username, this.loginForm.value.password)
+  .then((response) => {
+    var userUid = firebase.auth().currentUser.uid;
+    var db = firebase.firestore();
+    db.collection('usuarios').doc(userUid);
+  })
 }
 
 signIn() { 
   console.log("hice click"); 
   this.afAuth.signInWithEmailAndPassword(this.loginForm.value.username, this.loginForm.value.password).then(() => {
-    this.router.navigate(['/inicio']);
+    //this.router.navigate(['/inicio']);
    }).catch(response => {
      this.errorMessage = response.message;
      console.log("ERROR MSG: ", this.errorMessage)
