@@ -21,6 +21,7 @@ import {MatRadioModule} from '@angular/material/radio';
 
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material/select';
+import { IncomesComponent } from './components/incomes/incomes.component';
 
 
 
@@ -28,7 +29,8 @@ import {MatSelectModule} from '@angular/material/select';
   declarations: [
     AppComponent,
     LoginComponent,
-    ExpensesComponent
+    ExpensesComponent,
+    IncomesComponent
   ],
   imports: [
     BrowserModule,
