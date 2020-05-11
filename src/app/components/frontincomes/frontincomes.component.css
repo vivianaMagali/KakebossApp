@@ -1,5 +1,6 @@
 .incomes-card{
     max-width: 400px;
+    height: auto;
 }
 
 mat-card-header{
@@ -8,4 +9,19 @@ mat-card-header{
 
 .buttons{
     padding-right: 20px;
+}
+
+.income{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.income:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.name{
+    font-size: 20px;
+    font-weight: 500;
 }

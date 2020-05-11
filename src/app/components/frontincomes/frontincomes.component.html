@@ -12,13 +12,32 @@
         </div>
     </mat-card-header>
     <mat-card-content>
-        <mat-list> <!--ngFor to the incomes table-->
-            
-            <mat-list-item>Item 1</mat-list-item>
+    <!--ngFor to the incomes table-->
+    <!--Click on the name to see more information?-->
+        <div class="incomeList">  
+            <div class="income">
+                <div class="info">
+                    <p class="name">Sueldo mes</p>
+                    <p class="date">1/05/2020</p>
+                </div>
+                <p class="money">1200€</p>
+            </div>
             <mat-divider></mat-divider>
-            <mat-list-item>Item 2</mat-list-item>
+            <div class="income">
+                <div class="info">
+                    <p class="name">Devolución Hacienda</p>
+                    <p class="date">8/05/2020</p>
+                </div>
+                <p class="money">80€</p>
+            </div>
             <mat-divider></mat-divider>
-            <mat-list-item>Item 3</mat-list-item>
-        </mat-list>
+            <div class="income">
+                <div class="info">
+                    <p class="name">Regalo abuela</p>
+                    <p class="date">10/05/2020</p>
+                </div>
+                <p class="money">20€</p>
+            </div>
+        </div>          
     </mat-card-content>
 </mat-card>
