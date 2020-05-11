@@ -5,7 +5,10 @@
 }
 
 mat-card-header{
+    padding-top: 10px;
     justify-content: space-between;
+    background-color: rgba(103,58,183, 0.2);
+    border-radius: 10px;
 }
 
 .buttons{
