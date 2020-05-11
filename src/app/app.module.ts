@@ -16,12 +16,14 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { ExpensesComponent } from './components/expenses/expenses.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatFormFieldModule, MatFormField } from '@angular/material/form-field';
 import {MatRadioModule} from '@angular/material/radio';
 
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 import { SignupComponent } from './components/signup/signup.component';
+
+
 
 
 
@@ -48,6 +50,10 @@ import { SignupComponent } from './components/signup/signup.component';
     NoopAnimationsModule,
     MatSelectModule,
     MatRadioModule
+   
+  ],
+  exports: [
+    MatFormFieldModule
   ],
   providers: [
   

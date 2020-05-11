@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
    password: ['', Validators.required]
  })
 
+ 
  ngOnInit() {
   this.afAuth.user.subscribe(user => {
     if (user) {
@@ -52,6 +53,7 @@ createUser() {
     db.collection('usuarios').doc(userUid);
   })
 }
+
 
 signIn() { 
   console.log("hice click"); 
