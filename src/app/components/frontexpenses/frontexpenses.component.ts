@@ -1,7 +1,7 @@
 import  {Component} from '@angular/core';
 
 @Component({
-    selector: 'app-expenses',
+    selector: 'app-frontexpenses',
     templateUrl: './frontexpenses.component.html'
 })
 export class expensesComponent{

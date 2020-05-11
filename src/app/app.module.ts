@@ -7,7 +7,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
-import { incomesComponent } from './components/incomes/incomes.component';
+import { incomesComponent } from './components/frontincomes/frontincomes.component';
 import { expensesComponent } from './components/frontexpenses/frontexpenses.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDividerModule } from '@angular/material/divider';
