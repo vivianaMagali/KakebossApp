@@ -9,6 +9,18 @@
 <hr>
 make a navbar
 -->
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Kakeboss</span>
+      <span class="example-spacer"></span>
+      <button mat-button [matMenuTriggerFor]="menu">Log in/Register</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Log in</button>
+        <button mat-menu-item>Register</button>
+      </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
+
 <div class="components">
   <app-frontincomes></app-frontincomes>
   <app-frontexpenses></app-frontexpenses>
