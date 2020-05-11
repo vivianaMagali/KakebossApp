@@ -14,6 +14,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 
 
@@ -34,8 +35,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatDividerModule,
     MatListModule,
     MatCardModule,
-    MatButtonModule
-
+    MatButtonModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
