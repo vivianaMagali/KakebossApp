@@ -1,14 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
-// import {ErrorStateMatcher} from '@angular/material/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-/** Error when invalid control is dirty, touched, or submitted. */
-// export class MyErrorStateMatcher implements ErrorStateMatcher {
-//   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-//     const isSubmitted = form && form.submitted;
-//     return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
-//   }
-// }
 
 @Component({
   selector: 'app-signup',
@@ -16,15 +8,28 @@ import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/form
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  emailFormControl = new FormControl('', [
-    Validators.required,
-    Validators.email,
-  ]);
-  // matcher = new MyErrorStateMatcher();
+  user: FormGroup;
+  
+  
+ 
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
+
+  passwordMatchValidator(g: FormGroup) {
+    return g.get('password').value === g.get('passwordRepeat').value
+       ? null : {'mismatch': true};
+ }
 
   ngOnInit(): void {
+    this.user = this.fb.group({
+      name: ['', [Validators.required, Validators.minLength(2)]],
+      username: ['', [Validators.required]],
+      password: ['', Validators.required],
+      passwordRepeat: ['', Validators.required]
+    });
   }
+
+  
+
 
 }

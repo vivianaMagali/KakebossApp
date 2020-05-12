@@ -1,0 +1,29 @@
+.container{
+    width: 50%;
+    margin: auto;
+    display: grid;
+    padding: 30px;
+    margin-top: 150px;
+    background-color: rgb(245, 245, 245);
+    box-shadow: 2px 2px 10px rgb(223, 223, 223);  
+}
+
+.title{
+    font-size: 20px;
+    justify-self: center;
+}
+
+button:hover{
+    background-color: pink;
+}
+
+
+.example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+  }
+  
+  .example-radio-button {
+    margin: 5px;
+  }
