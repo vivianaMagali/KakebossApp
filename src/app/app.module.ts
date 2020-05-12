@@ -18,8 +18,6 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
