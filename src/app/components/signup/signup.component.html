@@ -1,44 +1,34 @@
 
     <div class="container">
       <mat-label class="title">Sign Up</mat-label>
-      <form novalidate>
+      
             <mat-form-field>
               <mat-label>Name</mat-label>
-              <input  name="name" matInput formControlName="name" required>
+              <input  name="name" matInput [(ngModel)]="name" class="form-control" required>
             </mat-form-field>
-
+         
             <mat-form-field>
                 <mat-label>Surname</mat-label>
-                <input name="surname" matInput  formControlName="surname" required>
+                <input name="surname" matInput  [(ngModel)]="surname" class="form-control" required>
               </mat-form-field>
-            
-              
-              <mat-form-field>
-                <mat-label>Email*</mat-label>
-                <input matInput formControlName="emailFormControl" placeholder="Ex. pat@example.com">
-                <!-- <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                  Please enter a valid email address
-                </mat-error>
-                <mat-error *ngIf="emailFormControl.hasError('required')">
-                  Email is <strong>required</strong>
-                </mat-error> -->
+          
+              <mat-form-field appearance="fill">
+                <mat-label>Enter your email</mat-label>
+                <input matInput placeholder="pat@example.com" [(ngModel)]="email" required>
               </mat-form-field>
-            
 
             <mat-form-field >
                 <mat-label>Password*</mat-label>
-                <input matInput id="password" type="password" placeholder="Password" class="form-control" formControlName="password" />
-               
+                <input matInput id="password" type="password" placeholder="Password" class="form-control" [(ngModel)]="password" />
             </mat-form-field>
-
+            <br>
             <mat-form-field >
               <mat-label>Confirm Password*</mat-label>
-              <input matInput id="password" type="password" placeholder="Password" class="form-control" formControlName="passwordRepeat" />
-          
+              <input matInput id="password" type="password" placeholder="Repeat password" class="form-control" [(ngModel)]="passwordRepeat" />
             </mat-form-field>
-  
-          </form>
-              <button mat-button color="primary" >Acept</button>
+          
+         
+              <button mat-button color="primary" (click)="createUser()" >Acept</button>
               <button mat-button color="primary">Cancel</button>
 
       </div>
