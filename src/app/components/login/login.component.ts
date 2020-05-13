@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
 
 
 signIn() { 
-  
+  console.log("hice click en login"); 
   this.afAuth.signInWithEmailAndPassword(this.loginForm.value.username, this.loginForm.value.password).then(() => {
     //this.router.navigate(['/inicio']);
    }).catch(response => {

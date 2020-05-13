@@ -50,8 +50,6 @@ import { SignupComponent } from './components/signup/signup.component';
     NoopAnimationsModule,
     MatSelectModule,
     MatRadioModule,
-    
-   
   ],
   exports: [
     MatFormFieldModule

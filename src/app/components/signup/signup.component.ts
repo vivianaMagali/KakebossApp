@@ -13,6 +13,7 @@ import * as firebase from 'firebase';
 
 export class SignupComponent implements OnInit {
 
+  errorMessage:string='';
   constructor(private fb: FormBuilder,
     private afAuth: AngularFireAuth) {}
 
@@ -22,9 +23,14 @@ export class SignupComponent implements OnInit {
     password: string;
     passwordRepeat: string;
 
-  passwordMatchValidator(g: FormGroup) {
-    return g.get('password').value === g.get('passwordRepeat').value
-       ? null : {'mismatch': true};
+    
+  getErrorMessage() {
+    if (this.password === this.passwordRepeat){
+        return true;
+    }else{
+      this.errorMessage="the passwords are wrong";
+      return false;
+    }
  }
 
 
@@ -34,18 +40,20 @@ export class SignupComponent implements OnInit {
 
   createUser() {
   console.log("hice click en createUser");
-  var auth = firebase.auth();
-  var promise = auth.createUserWithEmailAndPassword(this.email,this.password);
-  promise.then(function () {
-    var userUid = auth.currentUser.uid;
-    var db = firebase.firestore();
-      db.collection('usuarios').doc(userUid).set({
-        name: this.name,
-        surname: this.surname,
-        email: this.email,
-        // password: this.user.value.password,
-      });
-    })
+  if(this.getErrorMessage()){
+    this.afAuth.createUserWithEmailAndPassword(this.email,this.password).then((response) => {
+      var userUid = firebase.auth().currentUser.uid;
+      var db = firebase.firestore();
+        db.collection('usuarios').doc(userUid).collection("datos").add({
+          name: this.name,
+          surname: this.surname
+        });
+      })
+  }else{
+    console.log("no pude crear usuario por contraseñas no iguales");
+  }
+  
+
   }
 
 }

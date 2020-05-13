@@ -17,15 +17,19 @@
                 <input matInput placeholder="pat@example.com" [(ngModel)]="email" required>
               </mat-form-field>
 
-            <mat-form-field >
+            <mat-form-field appearance="fill">
                 <mat-label>Password*</mat-label>
                 <input matInput id="password" type="password" placeholder="Password" class="form-control" [(ngModel)]="password" />
             </mat-form-field>
             <br>
-            <mat-form-field >
+            <mat-form-field appearance="fill">
               <mat-label>Confirm Password*</mat-label>
               <input matInput id="password" type="password" placeholder="Repeat password" class="form-control" [(ngModel)]="passwordRepeat" />
             </mat-form-field>
+
+            <ng-container *ngIf="errorMessage">
+              <span class="error" >{{errorMessage}}</span>
+            </ng-container>
           
          
               <button mat-button color="primary" (click)="createUser()" >Acept</button>
