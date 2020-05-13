@@ -7,8 +7,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
-import { incomesComponent } from './components/frontincomes/frontincomes.component';
-import { expensesComponent } from './components/frontexpenses/frontexpenses.component';
+import { frontIncomesComponent } from './components/frontincomes/frontincomes.component';
+import { frontExpensesComponent } from './components/frontexpenses/frontexpenses.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
@@ -21,8 +21,8 @@ import { MatMenuModule } from '@angular/material/menu';
 @NgModule({
   declarations: [
     AppComponent,
-    incomesComponent,
-    expensesComponent
+    frontIncomesComponent,
+    frontExpensesComponent
   ],
   imports: [
     BrowserModule,

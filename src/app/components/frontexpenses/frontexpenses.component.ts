@@ -6,6 +6,6 @@ import  {Component} from '@angular/core';
     styleUrls: ['./frontexpenses.component.css'],
 
 })
-export class expensesComponent{
+export class frontExpensesComponent{
 
 }
