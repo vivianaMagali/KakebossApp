@@ -17,7 +17,10 @@ button:hover{
     background-color: pink;
 }
 
-  
-  .example-radio-button {
-    margin: 5px;
-  }
+.error{
+  color: red;
+}
+
+.example-radio-button {
+  margin: 5px;
+}
