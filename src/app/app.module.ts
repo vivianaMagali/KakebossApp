@@ -19,11 +19,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatRadioModule } from '@angular/material/radio';
 import { environment } from '../environments/environment';
 
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
@@ -53,7 +51,6 @@ import { LoginComponent } from './components/login/login.component';
     MatDividerModule,
     MatListModule,
     MatCardModule,
-    MatButtonModule,
     FlexLayoutModule,
     MatToolbarModule,
     MatMenuModule,
@@ -64,9 +61,8 @@ import { LoginComponent } from './components/login/login.component';
     MatIconModule,
     MatButtonModule,
     MatFormFieldModule,
-    NoopAnimationsModule,
     MatSelectModule,
-    MatRadioModule
+    MatRadioModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
