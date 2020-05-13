@@ -34,6 +34,7 @@ import { frontExpensesComponent } from './components/frontexpenses/frontexpenses
 import { IncomesComponent } from './components/incomes/incomes.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { SignoutComponent } from './components/signout/signout.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { SignupComponent } from './components/signup/signup.component';
     LoginComponent,
     ExpensesComponent,
     SignupComponent,
-    IncomesComponent
+    IncomesComponent,
+    SignoutComponent
   ],
   imports: [
     BrowserModule,
