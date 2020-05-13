@@ -6,9 +6,19 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { config } from './services/utils/firebase';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { ExpensesComponent } from './components/expenses/expenses.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatRadioModule } from '@angular/material/radio';
 import { environment } from '../environments/environment';
-import { frontIncomesComponent } from './components/frontincomes/frontincomes.component';
-import { frontExpensesComponent } from './components/frontexpenses/frontexpenses.component';
+
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
@@ -17,17 +27,26 @@ import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatSelectModule } from '@angular/material/select';
+
+import { frontIncomesComponent } from './components/frontincomes/frontincomes.component';
+import { frontExpensesComponent } from './components/frontexpenses/frontexpenses.component';
+import { IncomesComponent } from './components/incomes/incomes.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     frontIncomesComponent,
-    frontExpensesComponent
+    frontExpensesComponent,
+    LoginComponent,
+    ExpensesComponent,
+    IncomesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(config),
     AngularFireAnalyticsModule,
     AngularFirestoreModule,
     NoopAnimationsModule,
@@ -37,7 +56,17 @@ import { MatMenuModule } from '@angular/material/menu';
     MatButtonModule,
     FlexLayoutModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    AngularFireAuthModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatInputModule,
+    MatIconModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    NoopAnimationsModule,
+    MatSelectModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,23 @@
+<div class="container">
+    <mat-label class="title">Add Expense</mat-label>
+
+    <mat-form-field class="example-full-width">
+        <mat-label >Name expense</mat-label>
+        <input type="text"  name="name_expense" matInput [(ngModel)]="name_expense">
+    </mat-form-field>
+
+    
+    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="chosenCategory" name="categoria" >
+        <mat-label >Change category:</mat-label>
+        <mat-radio-button class="example-radio-button" *ngFor="let category of categories" [value]="category" >{{category}}</mat-radio-button>
+    </mat-radio-group>
+
+    <mat-form-field class="example-full-width">
+        <mat-label >Add expense</mat-label>
+        <input type="number" name="amount" matInput [(ngModel)]="amount">
+    </mat-form-field>€
+    
+    <button mat-button (click)="addExpense()">Acept</button>
+</div>
+
+  
