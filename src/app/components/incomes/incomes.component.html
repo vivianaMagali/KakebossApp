@@ -1,0 +1,16 @@
+<div class="container">
+  <mat-label class="title">Add Income</mat-label>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Name income</mat-label>
+    <input type="text" name="name_income" matInput [(ngModel)]="name_income">
+  </mat-form-field>
+
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Add income</mat-label>
+    <input type="number" name="amount" matInput [(ngModel)]="amount">
+  </mat-form-field>€
+
+  <button mat-button (click)="addIncome()">Acept</button>
+</div>
