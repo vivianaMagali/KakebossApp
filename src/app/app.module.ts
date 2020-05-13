@@ -15,9 +15,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { ExpensesComponent } from './components/expenses/expenses.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
+
+import { MatFormFieldModule, MatFormField } from '@angular/material/form-field';
 import { MatRadioModule } from '@angular/material/radio';
 import { environment } from '../environments/environment';
+
 
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
@@ -31,6 +33,7 @@ import { frontIncomesComponent } from './components/frontincomes/frontincomes.co
 import { frontExpensesComponent } from './components/frontexpenses/frontexpenses.component';
 import { IncomesComponent } from './components/incomes/incomes.component';
 import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +42,7 @@ import { LoginComponent } from './components/login/login.component';
     frontExpensesComponent,
     LoginComponent,
     ExpensesComponent,
+    SignupComponent,
     IncomesComponent
   ],
   imports: [
@@ -62,7 +66,10 @@ import { LoginComponent } from './components/login/login.component';
     MatButtonModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatRadioModule,
+    MatRadioModule
+  ],
+  exports: [
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

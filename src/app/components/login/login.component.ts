@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
    password: ['', Validators.required]
  })
 
+ 
  ngOnInit() {
   this.afAuth.user.subscribe(user => {
     if (user) {
@@ -44,17 +45,18 @@ export class LoginComponent implements OnInit {
 
 
 
-createUser() {
-  this.afAuth.createUserWithEmailAndPassword(this.loginForm.value.username, this.loginForm.value.password)
-  .then((response) => {
-    var userUid = firebase.auth().currentUser.uid;
-    var db = firebase.firestore();
-    db.collection('usuarios').doc(userUid);
-  })
-}
+// createUser() {
+//   this.afAuth.createUserWithEmailAndPassword(this.loginForm.value.username, this.loginForm.value.password)
+//   .then((response) => {
+//     var userUid = firebase.auth().currentUser.uid;
+//     var db = firebase.firestore();
+//     db.collection('usuarios').doc(userUid);
+//   })
+// }
+
 
 signIn() { 
-  console.log("hice click"); 
+  console.log("hice click en login"); 
   this.afAuth.signInWithEmailAndPassword(this.loginForm.value.username, this.loginForm.value.password).then(() => {
     //this.router.navigate(['/inicio']);
    }).catch(response => {
