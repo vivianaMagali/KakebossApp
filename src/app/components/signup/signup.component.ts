@@ -44,7 +44,7 @@ export class SignupComponent implements OnInit {
     this.afAuth.createUserWithEmailAndPassword(this.email,this.password).then((response) => {
       var userUid = firebase.auth().currentUser.uid;
       var db = firebase.firestore();
-        db.collection('usuarios').doc(userUid).collection("datos").add({
+        db.collection('usuarios').doc(userUid).collection("datos").doc("datos-perfil").set({
           name: this.name,
           surname: this.surname
         });

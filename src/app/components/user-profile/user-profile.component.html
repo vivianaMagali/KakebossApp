@@ -1,0 +1,46 @@
+
+    <div class="container">
+        <mat-label class="title">Modified data Profile</mat-label>
+        
+              <mat-form-field>
+                <mat-label>Name</mat-label>
+                <input  matInput [(ngModel)]="name"  value="" required>
+              </mat-form-field>
+           
+              <mat-form-field>
+                  <mat-label>Surname</mat-label>
+                  <input  matInput [(ngModel)]="surname"   placeholder="" required>
+              </mat-form-field>
+
+              <!-- <ng-container *ngIf="errorMessage">
+                <span class="error" >{{errorMessage}}</span>
+              </ng-container> -->
+        
+            <button mat-button color="primary" (click)="modifiedProfile()">Modified profile</button>
+            <br>
+            <mat-label class="title">Modified email</mat-label>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Enter your email</mat-label>
+              <input matInput placeholder="pat@example.com" [(ngModel)]="email">
+            </mat-form-field>
+
+            <button mat-button color="primary" (click)="modifiedEmail()">Modified email</button>
+            <br>
+
+
+            <mat-label class="title">Modified password</mat-label>
+            <mat-form-field appearance="fill">
+              <mat-label>Enter your password</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="password" >
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+            <button mat-button color="primary" (click)="modifiedPassword()">Modified password</button>
+
+
+        </div>
+  
+    
+  
