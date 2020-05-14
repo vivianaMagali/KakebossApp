@@ -38,6 +38,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { SignoutComponent } from './components/signout/signout.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { BalanceComponent } from './components/balance/balance.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     SignupComponent,
     IncomesComponent,
     SignoutComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    BalanceComponent
   ],
   imports: [
     BrowserModule,
