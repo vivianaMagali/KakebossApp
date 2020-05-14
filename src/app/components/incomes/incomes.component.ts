@@ -11,6 +11,7 @@ export class IncomesComponent implements OnInit {
 
   name_income: string;
   amount: number;
+  date:string;
 
   constructor() { }
 
@@ -22,7 +23,8 @@ export class IncomesComponent implements OnInit {
     if (user) {
       db.collection("usuarios").doc(user.uid).collection("incomes").add({
         name_income: this.name_income,
-        amount: this.amount
+        amount: this.amount,
+        date:this.date
       })
     }
   }

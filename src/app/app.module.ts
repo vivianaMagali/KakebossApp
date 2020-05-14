@@ -18,7 +18,7 @@ import { ExpensesComponent } from './components/expenses/expenses.component';
 
 import { MatFormFieldModule, MatFormField } from '@angular/material/form-field';
 import { MatRadioModule } from '@angular/material/radio';
-import { environment } from '../environments/environment';
+
 
 
 import { MatDividerModule } from '@angular/material/divider';
@@ -28,6 +28,8 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 
 import { frontIncomesComponent } from './components/frontincomes/frontincomes.component';
 import { frontExpensesComponent } from './components/frontexpenses/frontexpenses.component';
@@ -35,6 +37,7 @@ import { IncomesComponent } from './components/incomes/incomes.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { SignoutComponent } from './components/signout/signout.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,8 @@ import { SignoutComponent } from './components/signout/signout.component';
     ExpensesComponent,
     SignupComponent,
     IncomesComponent,
-    SignoutComponent
+    SignoutComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +72,9 @@ import { SignoutComponent } from './components/signout/signout.component';
     MatButtonModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatRadioModule
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   exports: [
     MatFormFieldModule
