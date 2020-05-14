@@ -18,7 +18,7 @@ import { ExpensesComponent } from './components/expenses/expenses.component';
 
 import { MatFormFieldModule, MatFormField } from '@angular/material/form-field';
 import { MatRadioModule } from '@angular/material/radio';
-import { environment } from '../environments/environment';
+
 
 
 import { MatDividerModule } from '@angular/material/divider';
@@ -28,6 +28,8 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 
 import { frontIncomesComponent } from './components/frontincomes/frontincomes.component';
 import { frontExpensesComponent } from './components/frontexpenses/frontexpenses.component';
@@ -70,7 +72,9 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     MatButtonModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatRadioModule
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   exports: [
     MatFormFieldModule

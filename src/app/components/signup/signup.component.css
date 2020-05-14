@@ -14,7 +14,7 @@
 }
 
 button:hover{
-    background-color: pink;
+    background-color:  rgba(103,58,183, 0.2);
 }
 
 .error{

@@ -19,12 +19,18 @@
 
             <mat-form-field appearance="fill">
                 <mat-label>Password*</mat-label>
-                <input matInput id="password" type="password" placeholder="Password" class="form-control" [(ngModel)]="password" />
-            </mat-form-field>
+                <input matInput [type]="hide ? 'password' : 'text'"  id="password" type="password" placeholder="Password" class="form-control" [(ngModel)]="password" />
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
             <br>
             <mat-form-field appearance="fill">
               <mat-label>Confirm Password*</mat-label>
-              <input matInput id="password" type="password" placeholder="Repeat password" class="form-control" [(ngModel)]="passwordRepeat" />
+              <input matInput  [type]="hide ? 'password' : 'text'"  id="password" type="password" placeholder="Repeat password" class="form-control" [(ngModel)]="passwordRepeat" />
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
             </mat-form-field>
 
             <ng-container *ngIf="errorMessage">
@@ -33,7 +39,7 @@
           
          
               <button mat-button color="primary" (click)="createUser()" >Acept</button>
-              <button mat-button color="primary">Cancel</button>
+              <button mat-button color="primary" (click)="cancel()">Cancel</button>
 
       </div>
 

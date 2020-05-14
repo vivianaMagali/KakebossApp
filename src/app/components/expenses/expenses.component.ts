@@ -12,6 +12,7 @@ export class ExpensesComponent implements OnInit {
   name_expense: string;
   amount: number;
   chosenCategory: string;
+  date:string;
   categories: string[] = ['Supervivencia', 'Ocio y vicio', 'Cultura', 'Extras'];
   constructor() { }
 
@@ -26,7 +27,8 @@ export class ExpensesComponent implements OnInit {
        db.collection("usuarios").doc(user.uid).collection("expenses").add({
             name_expense: this.name_expense,
             amount: this.amount,
-            category: this.chosenCategory
+            category: this.chosenCategory,
+            date:this.date
       })
     }
   }

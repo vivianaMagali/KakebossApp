@@ -1,36 +1,32 @@
 
     <div class="container">
-        <mat-label class="title">Modified data Profile</mat-label>
-        
+      <mat-label class="first-title">Profile</mat-label>
+      <div class="hijo">
+        <mat-label class="title">Modified data Profile: </mat-label>
               <mat-form-field>
                 <mat-label>Name</mat-label>
-                <input  matInput [(ngModel)]="name"  value="" required>
+                <input  matInput [(ngModel)]="name">
               </mat-form-field>
            
               <mat-form-field>
                   <mat-label>Surname</mat-label>
-                  <input  matInput [(ngModel)]="surname"   placeholder="" required>
+                  <input  matInput [(ngModel)]="surname"   placeholder="">
               </mat-form-field>
-
-              <!-- <ng-container *ngIf="errorMessage">
-                <span class="error" >{{errorMessage}}</span>
-              </ng-container> -->
-        
             <button mat-button color="primary" (click)="modifiedProfile()">Modified profile</button>
-            <br>
-            <mat-label class="title">Modified email</mat-label>
+          </div>
 
-            <mat-form-field appearance="fill">
+          <div class="hijo">
+            <mat-label class="title">Modified email :</mat-label>
+            <mat-form-field>
               <mat-label>Enter your email</mat-label>
-              <input matInput placeholder="pat@example.com" [(ngModel)]="email">
+              <input matInput [(ngModel)]="email">
             </mat-form-field>
-
             <button mat-button color="primary" (click)="modifiedEmail()">Modified email</button>
-            <br>
+          </div>
 
-
-            <mat-label class="title">Modified password</mat-label>
-            <mat-form-field appearance="fill">
+          <div class="hijo">
+            <mat-label class="title">Modified password :</mat-label>
+            <mat-form-field>
               <mat-label>Enter your password</mat-label>
               <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="password" >
               <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
@@ -38,7 +34,7 @@
               </button>
             </mat-form-field>
             <button mat-button color="primary" (click)="modifiedPassword()">Modified password</button>
-
+          </div>
 
         </div>
   

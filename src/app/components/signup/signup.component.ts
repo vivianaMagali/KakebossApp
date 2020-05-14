@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase';
-
-
 
 @Component({
   selector: 'app-signup',
@@ -12,10 +9,9 @@ import * as firebase from 'firebase';
 })
 
 export class SignupComponent implements OnInit {
-
+  hide = true;
   errorMessage:string='';
-  constructor(private fb: FormBuilder,
-    private afAuth: AngularFireAuth) {}
+  constructor(private afAuth: AngularFireAuth) {}
 
     name: string;
     surname: string;
@@ -28,15 +24,12 @@ export class SignupComponent implements OnInit {
     if (this.password === this.passwordRepeat){
         return true;
     }else{
-      this.errorMessage="the passwords are wrong";
+      this.errorMessage="The passwords are wrong";
       return false;
     }
  }
 
-
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 
   createUser() {
   console.log("hice click en createUser");
@@ -49,11 +42,15 @@ export class SignupComponent implements OnInit {
           surname: this.surname
         });
       })
-  }else{
-    console.log("no pude crear usuario por contraseñas no iguales");
+    }else{
+      console.log("no pude crear usuario por contraseñas no iguales");
+    }
   }
-  
 
+  cancel(){
+    //enroutamiento a pagina principal
   }
+
+
 
 }

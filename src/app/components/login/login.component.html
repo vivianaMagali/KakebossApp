@@ -1,22 +1,18 @@
 <div class="container">
-    <span class="text">Login</span><br>
-  
-    <form [formGroup]="loginForm">
-      <div class="form-group">
-        <label  for="title">Email</label>
-        <input type="text" id="username" placeholder="Username" class="form-control" formControlName="username" />
-      </div>
-   
-      <div class="form-group">
-        <label  for="description">Password</label>
-        <input id="password" type="password" placeholder="Password" class="form-control" formControlName="password" />
-      </div>
-   
-      <div class="buttons-container center">
-        <button class="btn btn-primary" (click)="signIn()">Login</button>
-        <!-- <button class="btn btn-success" (click)="createUser()">Create Account</button> -->
-      </div>
-    </form>
+    <span class="title">Login</span><br>
+    
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput type="text" id="username" placeholder="Username" class="form-control" [(ngModel)]="username" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput id="password" type="password" placeholder="Password" class="form-control" [(ngModel)]="password" />
+      </mat-form-field>
+       
+      <button mat-button color="primary"  class="btn btn-primary" (click)="signIn()">Login</button>
+
     <ng-container *ngIf="errorMessage">
       <span class="error" >{{errorMessage}}</span>
     </ng-container>
