@@ -32,7 +32,8 @@ export class BalanceComponent implements OnInit {
       });
       console.log(localIncome);
 
-      var localOutcome = db.collection("usuarios").doc(user.uid).collection("outcomes").get().then(function (totalOutcomes) {
+      //logro obtener la suma total de los vlores de Outcome, pero estos son devueltos en formato de objeto promesa, icompatible con un type number
+      var localOutcome = db.collection("usuarios").doc(user.uid).collection("expenses").get().then(function (totalOutcomes) {
         var aux = 0;
         totalOutcomes.forEach(function (object) {
           return aux += +object.data().amount;
@@ -40,7 +41,6 @@ export class BalanceComponent implements OnInit {
         return aux;
       });
 
-      var outcomes = db.collection("usuarios").doc(user.uid).collection("outcomes").get();
       console.log("incomes =", localIncome);
       console.log("outcomes =", localOutcome);
     }
