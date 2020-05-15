@@ -34,6 +34,7 @@ import { MatRadioModule } from '@angular/material/radio';
 
 /** OUR COMPONENTS */
 
+import { frontUUComponent } from './components/frontUnloggedUser/frontUnloggedUser.component';
 import { frontIncomesComponent } from './components/frontincomes/frontincomes.component';
 import { frontExpensesComponent } from './components/frontexpenses/frontexpenses.component';
 import { IncomesComponent } from './components/incomes/incomes.component';
@@ -53,7 +54,8 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     SignupComponent,
     IncomesComponent,
     SignoutComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    frontUUComponent
   ],
   imports: [
     BrowserModule,
