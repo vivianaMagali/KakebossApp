@@ -43,6 +43,7 @@ export class BalanceComponent implements OnInit {
 
       console.log("incomes =", localIncome);
       console.log("outcomes =", localOutcome);
+     // console.log("total => ", localIncome - localOutcome);
     }
   }
 }
