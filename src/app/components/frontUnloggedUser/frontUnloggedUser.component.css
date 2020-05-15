@@ -1,0 +1,23 @@
+.front{
+    display: flex;
+    flex-direction: row;
+}
+
+img{
+    max-height: 500px;
+}
+.infoFront{
+    max-width: 800px;
+    font-size: 15px;
+}
+
+.infop{
+    margin-top: 10px;
+}
+
+.registerButton{
+    width: 400px;
+    height: 175px;
+    margin: 25px;
+    font-size: 50px;
+}

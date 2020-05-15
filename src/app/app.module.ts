@@ -31,6 +31,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatTabsModule } from '@angular/material/tabs';
+
 
 /** OUR COMPONENTS */
 
@@ -80,7 +82,8 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     MatSelectModule,
     MatRadioModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTabsModule,
   ],
   exports: [
     MatFormFieldModule
