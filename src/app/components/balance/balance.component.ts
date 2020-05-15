@@ -22,19 +22,27 @@ export class BalanceComponent implements OnInit {
     var user = firebase.auth().currentUser;
     if (user) {
 
+      //logro obtener la suma total de los vlores de Income, pero estos son devueltos en formato de objeto promesa, icompatible con un type number
       var localIncome = db.collection("usuarios").doc(user.uid).collection("incomes").get().then(function (totalIncomes) {
         var aux = 0;
         totalIncomes.forEach(function (object) {
-          //incomeVal +=  (object.data().amount);
-          // object.data() is never undefined for query doc snapshots
-          //console.log(object.id, " => ", object.data().amount);
           return aux += +object.data().amount;
         });
         return aux;
       });
       console.log(localIncome);
+
+      var localOutcome = db.collection("usuarios").doc(user.uid).collection("outcomes").get().then(function (totalOutcomes) {
+        var aux = 0;
+        totalOutcomes.forEach(function (object) {
+          return aux += +object.data().amount;
+        });
+        return aux;
+      });
+
       var outcomes = db.collection("usuarios").doc(user.uid).collection("outcomes").get();
-      console.log("income =", this.incomeVal);
+      console.log("incomes =", localIncome);
+      console.log("outcomes =", localOutcome);
     }
   }
 }
