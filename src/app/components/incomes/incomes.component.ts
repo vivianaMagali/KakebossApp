@@ -20,8 +20,9 @@ export class IncomesComponent implements OnInit {
 
   addIncome() {
     var user = firebase.auth().currentUser;
+    console.log("añadi un ingreso");
     if (user) {
-      db.collection("usuarios").doc(user.uid).collection("incomes").add({
+      db.collection("usuarios").doc(user.uid).collection("incomes").doc("data-incomes").set({
         name_income: this.name_income,
         amount: this.amount,
         date:this.date

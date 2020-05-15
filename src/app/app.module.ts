@@ -38,6 +38,9 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { SignoutComponent } from './components/signout/signout.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { UserService } from './services/userService';
+import { MainComponent } from './main/main.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +52,9 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     SignupComponent,
     IncomesComponent,
     SignoutComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    MainComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +84,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
   exports: [
     MatFormFieldModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

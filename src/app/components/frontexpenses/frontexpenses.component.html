@@ -13,30 +13,15 @@
     <mat-card-content>
     <!--ngFor to the expenses table-->
     <!--Click on the name to see more information?-->
-        <div class="expenseList">  
+        <div class="expenseList" *ngFor="let expense in data | async">  
             <div class="expense">
                 <div class="info">
-                    <p class="name">Compra del mes</p>
-                    <p class="date">1/05/2020</p>
+                    <p class="name">{{expense.name_expense}}</p>
+                    <p class="date">{{expense.date}}</p>
                 </div>
-                <p class="money">200€</p>
+                <p class="money">{{expense.amount}}</p>
             </div>
             <mat-divider></mat-divider>
-            <div class="expense">
-                <div class="info">
-                    <p class="name">Alquiler</p>
-                    <p class="date">8/05/2020</p>
-                </div>
-                <p class="money">450€</p>
-            </div>
-            <mat-divider></mat-divider>
-            <div class="expense">
-                <div class="info">
-                    <p class="name">Vaqueros BSK</p>
-                    <p class="date">10/05/2020</p>
-                </div>
-                <p class="money">20€</p>
-            </div>
         </div>          
     </mat-card-content>
 </mat-card>

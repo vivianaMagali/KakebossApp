@@ -28,6 +28,7 @@ export class SignoutComponent implements OnInit {
     if(user!=null){
       this.afAuth.signOut().then(function() {
         console.log("sesion cerrada correctamente");
+        this.router.navigate(['']);
         // Sign-out successful.
       }).catch(function(error) {
         console.log("la sesion no se ha cerrado correctamente");

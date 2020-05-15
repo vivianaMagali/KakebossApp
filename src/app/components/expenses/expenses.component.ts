@@ -24,7 +24,7 @@ export class ExpensesComponent implements OnInit {
     var user = firebase.auth().currentUser;
     console.log("hice click en addExpense");
       if (user) {
-       db.collection("usuarios").doc(user.uid).collection("expenses").add({
+       db.collection("usuarios").doc(user.uid).collection("expenses").doc("data-expenses").set({
             name_expense: this.name_expense,
             amount: this.amount,
             category: this.chosenCategory,
