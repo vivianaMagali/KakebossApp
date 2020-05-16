@@ -35,5 +35,10 @@ export class IncomesComponent implements OnInit {
     this.router.navigate(['/inicio']);
   }
 
+  cancel(){
+    //enroutamiento a pagina principal
+    this.router.navigate(['/inicio']); 
+  }
+
 
 }

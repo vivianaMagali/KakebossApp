@@ -31,11 +31,19 @@ export class LoginComponent implements OnInit {
   login() { 
     console.log("hice click en login"); 
     
-    this.afAuth.signInWithEmailAndPassword(this.username, this.password).then(() => {}).catch(response => {
+    this.afAuth.signInWithEmailAndPassword(this.username, this.password).then(() => {
+      this.router.navigate(['/inicio']);
+    }).catch(response => {
       this.errorMessage = response.message;
       console.log("ERROR MSG: ", this.errorMessage)
+      
       });
-    this.router.navigate(['/inicio']);
+    
+  }
+
+  cancel(){
+    //enroutamiento a pagina principal
+    this.router.navigate(['/inicio']); 
   }
 
 }

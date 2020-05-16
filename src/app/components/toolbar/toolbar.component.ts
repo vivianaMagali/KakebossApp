@@ -18,7 +18,6 @@ export class ToolbarComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
-
   sign_up(){
     this.router.navigate(['/signup']);
   }

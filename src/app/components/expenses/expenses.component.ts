@@ -18,9 +18,7 @@ export class ExpensesComponent implements OnInit {
   date:string;
   categories: string[] = ['Supervivencia', 'Ocio y vicio', 'Cultura', 'Extras'];
 
-  constructor(private afAuth: AngularFireAuth,
-    private router: Router,
-    private ngZone: NgZone) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     
@@ -29,9 +27,10 @@ export class ExpensesComponent implements OnInit {
 
   addExpense(){
     
-    // var user = firebase.auth().currentUser;
+    var user = firebase.auth().currentUser;
     console.log("hice click en addExpense");
-    firebase.auth().onAuthStateChanged(function(user){
+    // firebase.auth().onAuthStateChanged(function(user){
+      console.log("user "+user);
         if (user) {
         db.collection("usuarios").doc(user.uid).collection("expenses").doc("data-expenses").set({
               name_expense: this.name_expense,
@@ -40,8 +39,14 @@ export class ExpensesComponent implements OnInit {
               date:this.date
         })
       }
-    })
-    this.router.navigate(['/inicio']);
+      this.router.navigate(['/inicio']);
+    // })
+    
+  }
+
+  cancel(){
+    //enroutamiento a pagina principal
+    this.router.navigate(['/inicio']); 
   }
 
 

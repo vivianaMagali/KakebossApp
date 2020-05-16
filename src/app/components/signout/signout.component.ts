@@ -15,12 +15,12 @@ export class SignoutComponent implements OnInit {
   private ngZone: NgZone) { }
 
   ngOnInit(): void {
-    this.afAuth.user.subscribe(user => {
-      if (user) {
-        this.ngZone.run(() => {
-          this.router.navigate(['/inicio']);
-      })
-  }})
+  //   this.afAuth.user.subscribe(user => {
+  //     if (user==null) {
+  //       this.ngZone.run(() => {
+  //         this.router.navigate(['/inicio-sin-login']);
+  //     })
+  // }})
   }
 
   signOutUser(){
@@ -28,12 +28,13 @@ export class SignoutComponent implements OnInit {
     if(user!=null){
       this.afAuth.signOut().then(function() {
         console.log("sesion cerrada correctamente");
-        this.router.navigate(['']);
+        
         // Sign-out successful.
       }).catch(function(error) {
         console.log("la sesion no se ha cerrado correctamente");
         // An error happened.
       });
+      this.router.navigate(['inicio-sin-login']);
     }else{
       console.log("no hay usuario logeado");
     }
