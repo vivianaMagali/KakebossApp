@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { db } from 'src/app/services/utils/firebase';
 import * as firebase from 'firebase';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-incomes',
@@ -13,20 +14,26 @@ export class IncomesComponent implements OnInit {
   amount: number;
   date:string;
 
-  constructor() { }
+  constructor(private router: Router,
+    private ngZone: NgZone) { }
 
   ngOnInit(): void {
   }
 
   addIncome() {
-    var user = firebase.auth().currentUser;
-    console.log("añadi un ingreso");
-    if (user) {
-      db.collection("usuarios").doc(user.uid).collection("incomes").doc("data-incomes").set({
-        name_income: this.name_income,
-        amount: this.amount,
-        date:this.date
-      })
-    }
+    // var user = firebase.auth().currentUser;
+      console.log("añadi un ingreso");
+      firebase.auth().onAuthStateChanged(function(user){
+      if (user) {
+        db.collection("usuarios").doc(user.uid).collection("incomes").doc("data-incomes").set({
+          name_income: this.name_income,
+          amount: this.amount,
+          date:this.date
+        })
+      }
+    })
+    this.router.navigate(['/inicio']);
   }
+
+
 }

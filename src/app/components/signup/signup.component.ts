@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -11,7 +12,9 @@ import * as firebase from 'firebase';
 export class SignupComponent implements OnInit {
   hide = true;
   errorMessage:string='';
-  constructor(private afAuth: AngularFireAuth) {}
+  constructor(private afAuth: AngularFireAuth,
+    private router: Router,
+    private ngZone: NgZone) {}
 
     name: string;
     surname: string;
@@ -42,6 +45,7 @@ export class SignupComponent implements OnInit {
           surname: this.surname
         });
       })
+      this.router.navigate(['/inicio']); 
     }else{
       console.log("no pude crear usuario por contraseñas no iguales");
     }
@@ -49,6 +53,7 @@ export class SignupComponent implements OnInit {
 
   cancel(){
     //enroutamiento a pagina principal
+    this.router.navigate(['/inicio']); 
   }
 
 

@@ -19,23 +19,23 @@ export class LoginComponent implements OnInit {
    private ngZone: NgZone) { }
  
   ngOnInit() {
-    this.afAuth.user.subscribe(user => {
-      if (user) {
-        this.ngZone.run(() => {
-          this.router.navigate(['/inicio']);
-      });
-    }});
+    // this.afAuth.user.subscribe(user => {
+    //   if (user) {
+    //     this.ngZone.run(() => {
+    //       this.router.navigate(['/inicio']);
+    //   });
+    // }});
   }
 
 
-  signIn() { 
+  login() { 
     console.log("hice click en login"); 
-    this.afAuth.signInWithEmailAndPassword(this.username, this.password).then(() => {
-      //this.router.navigate(['/inicio']);
-    }).catch(response => {
+    
+    this.afAuth.signInWithEmailAndPassword(this.username, this.password).then(() => {}).catch(response => {
       this.errorMessage = response.message;
       console.log("ERROR MSG: ", this.errorMessage)
       });
+    this.router.navigate(['/inicio']);
   }
 
 }

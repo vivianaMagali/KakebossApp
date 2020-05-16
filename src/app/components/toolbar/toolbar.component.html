@@ -5,8 +5,8 @@
       <span class="example-spacer"></span>
       <button mat-button [matMenuTriggerFor]="menu">Log in/Register</button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item>Log in</button>
-        <button mat-menu-item>Register</button>
+        <button mat-menu-item (click)="login()">Log in</button>
+        <button mat-menu-item (click)="sign_up()">Register</button>
       </mat-menu>
       <app-signout></app-signout>
   </mat-toolbar-row>

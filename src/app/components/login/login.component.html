@@ -12,7 +12,7 @@
         <input matInput id="password" type="password" placeholder="Password" class="form-control" [(ngModel)]="password" />
       </mat-form-field>
        
-      <button mat-button color="primary"  class="btn btn-primary" (click)="signIn()">Login</button>
+      <button mat-button color="primary"  class="btn btn-primary" (click)="login()">Login</button>
 
     <ng-container *ngIf="errorMessage">
       <span class="error" >{{errorMessage}}</span>
