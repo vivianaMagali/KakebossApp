@@ -1,5 +1,6 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit, NgZone, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserProfileComponent } from '../user-profile/user-profile.component';
 
 @Component({
   selector: 'app-toolbar',
@@ -7,6 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent implements OnInit {
+
+  @ViewChild(UserProfileComponent) profile: UserProfileComponent;
 
   constructor(private router: Router,
     private ngZone: NgZone) { }
@@ -20,6 +23,10 @@ export class ToolbarComponent implements OnInit {
 
   sign_up(){
     this.router.navigate(['/signup']);
+  }
+
+  viewProfile(){
+    this.router.navigate(['/profile']);
   }
 
 }

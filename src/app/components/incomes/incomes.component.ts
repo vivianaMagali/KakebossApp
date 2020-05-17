@@ -14,16 +14,15 @@ export class IncomesComponent implements OnInit {
   amount: number;
   date:string;
 
-  constructor(private router: Router,
-    private ngZone: NgZone) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
   addIncome() {
-    // var user = firebase.auth().currentUser;
+    var user = firebase.auth().currentUser;
       console.log("añadi un ingreso");
-      firebase.auth().onAuthStateChanged(function(user){
+      // firebase.auth().onAuthStateChanged(function(user){
       if (user) {
         db.collection("usuarios").doc(user.uid).collection("incomes").doc("data-incomes").set({
           name_income: this.name_income,
@@ -31,7 +30,7 @@ export class IncomesComponent implements OnInit {
           date:this.date
         })
       }
-    })
+    // })
     this.router.navigate(['/inicio']);
   }
 

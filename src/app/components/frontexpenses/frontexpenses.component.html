@@ -13,13 +13,13 @@
     <mat-card-content>
     <!--ngFor to the expenses table-->
     <!--Click on the name to see more information?-->
-        <div class="expenseList" *ngFor="let expense in data | async">  
+        <div class="expenseList" >  
             <div class="expense">
                 <div class="info">
-                    <p class="name">{{expense.name_expense}}</p>
-                    <p class="date">{{expense.date}}</p>
+                    <p class="name">{{name}}</p>
+                    <p class="date">{{date}}</p>
                 </div>
-                <p class="money">{{expense.amount}}</p>
+                <p class="money">{{amount}}€</p>
             </div>
             <mat-divider></mat-divider>
         </div>          

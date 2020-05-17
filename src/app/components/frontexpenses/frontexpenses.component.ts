@@ -10,20 +10,29 @@ import { Router } from '@angular/router';
 
 })
 export class frontExpensesComponent implements OnInit{
-    private data;
+    //public data :Array<User> = [];
+    amount:string;
+    category:string;
+    date:string;
+    name:string;
     
-    constructor(private userService: UserService,private router: Router,
-        private ngZone: NgZone) {
+    constructor(private userService: UserService,private router: Router) {
     }
 
     ngOnInit(): void {
-        var user = this.userService.getCurrentUser()
+        var user = this.userService.getCurrentUser();
         if (user) {
             db.collection("usuarios").doc(user.uid).collection("expenses").doc("data-expenses").get()
                 .then((doc) => {
                     if(doc.exists){
-                        this.data = doc.data()
-                        console.log(this.data)
+                        this.amount = doc.data().amount;
+                        this.name = doc.data().name_expense;
+                        this.date = doc.data().date;
+                        console.log(this.amount);
+                        console.log(this.name);
+                        console.log(this.date);
+                        //this.dataSource = new MatTableDataSource(this.amount);
+                        //console.log(this.data)
                     }else{
                         console.log("doc no existe")
                     }
