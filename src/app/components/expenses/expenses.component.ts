@@ -32,7 +32,7 @@ export class ExpensesComponent implements OnInit {
     // firebase.auth().onAuthStateChanged(function(user){
       console.log("user "+user);
         if (user) {
-        db.collection("usuarios").doc(user.uid).collection("expenses").doc("data-expenses").set({
+        db.collection("usuarios").doc(user.uid).collection("expenses").add({
               name_expense: this.name_expense,
               amount: this.amount,
               category: this.chosenCategory,

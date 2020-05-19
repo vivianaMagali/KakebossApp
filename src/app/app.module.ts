@@ -32,7 +32,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatTabsModule } from '@angular/material/tabs';
-
+import {MatTableModule} from '@angular/material/table';
+import {MatTableDataSource} from '@angular/material/table';
 
 /** OUR COMPONENTS */
 
@@ -62,7 +63,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
     UserProfileComponent,
     MainComponent,
     ToolbarComponent,
-    frontUUComponent
+    frontUUComponent,
   ],
   imports: [
     BrowserModule,
@@ -89,6 +90,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatTabsModule,
+    MatTableModule,
   ],
   exports: [
     MatFormFieldModule

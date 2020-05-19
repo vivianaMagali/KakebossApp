@@ -16,10 +16,37 @@
         <div class="expenseList" >  
             <div class="expense">
                 <div class="info">
-                    <p class="name">{{name}}</p>
-                    <p class="date">{{date}}</p>
+                <!-- <mat-table [dataSource]="datas" class="mat-elevation-z8">
+                    <ng-container matColumnDef="name">
+                        <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+                    </ng-container> -->
+                    <!-- <ng-container matColumnDef="category">
+                        <td mat-cell *matCellDef="let row"> {{row.category}} </td>
+                    </ng-container> -->
+                    <ul>
+                        <li class="text" *ngFor="let item of items | async">
+                          {{item.name_expense}}
+                        </li>
+
+                        <li class="text" *ngFor="let item of items | async">
+                            {{item.date}}
+                        </li>
+
+                    </ul>
+                    <!-- <p class="name">{{name}}</p>
+                    <p class="date">{{date}}</p> -->
                 </div>
-                <p class="money">{{amount}}€</p>
+                <!-- <ng-container matColumnDef="amount">
+                    <td mat-cell *matCellDef="let row"> {{row.amount}} </td>
+                </ng-container> -->
+                <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr> -->
+                <!-- <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </mat-table> -->
+                <li class="text" *ngFor="let item of items | async">
+                    {{item.amount}}
+                </li>
+                <!-- <p class="money">{{amount}}€</p> -->
+
             </div>
             <mat-divider></mat-divider>
         </div>          
