@@ -46,9 +46,13 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { SignoutComponent } from './components/signout/signout.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+
 import { UserService } from './services/userService';
 import { MainComponent } from './main/main.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { BalanceComponent } from './components/balance/balance.component';
+
+
 
 @NgModule({
   declarations: [
@@ -64,6 +68,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
     MainComponent,
     ToolbarComponent,
     frontUUComponent,
+    BalanceComponent,
   ],
   imports: [
     BrowserModule,
