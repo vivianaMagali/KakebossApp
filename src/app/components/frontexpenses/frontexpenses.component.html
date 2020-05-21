@@ -42,8 +42,8 @@
                 <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr> -->
                 <!-- <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                 </mat-table> -->
-                <li class="text" *ngFor="let item of items | async">
-                    {{item.amount}}
+                <li class="text" *ngFor="let amount of amounts">
+                    {{amount.amount}}
                 </li>
                 <!-- <p class="money">{{amount}}€</p> -->
 

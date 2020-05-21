@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { User, firestore } from 'firebase';
 import { AngularFirestore } from '@angular/fire/firestore';
+import * as firebase from 'firebase';
 
 
 @Component({
@@ -24,36 +25,41 @@ export class frontExpensesComponent implements OnInit{
     category:string;
     date:string;
     name:string;
-
+    public amounts:Array<number>=[30];
     // public docs: [];
 
     constructor(private userService: UserService,private router: Router,firestore: AngularFirestore) {
+        
         // this.items = db.collection('usuarios').doc(user.uid).collection("expenses").valueChanges();
-        var usuario = this.userService.getCurrentUser();
-        if (usuario) {
-         this.items = firestore.collection('usuarios').doc(usuario.uid).collection("expenses").valueChanges();
-        }
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+            this.items = firestore.collection('usuarios').doc(user.uid).collection("expenses").valueChanges();
+            }
+        })
     }
 
     ngOnInit(): void {
-        var user = this.userService.getCurrentUser();
-        if (user) {
-            db.collection("usuarios").doc(user.uid).collection("expenses").get().then(function(querySnapshot) {
-                querySnapshot.forEach(function(doc) {
-                    // this.items
-                    // doc.data() is never undefined for query doc snapshots
-                    // this.docs.push(doc.data());
-                    this.items.push(doc.data());
+        
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                db.collection("usuarios").doc(user.uid).collection("expenses").get().then(function(querySnapshot) {
+                    querySnapshot.forEach(function(doc) {
+                        // this.items
+                        // doc.data() is never undefined for query doc snapshots
+                        // this.docs.push(doc.data());
+                        this.items.push(doc.data());
+                        this.amounts.push(doc.data().amount);
+                        console.log(this.amounts);
+                        console.log(doc.id, " => ", doc.data().amount);
+                    });
+                    // this.dataSource = new MatTableDataSource(this.docs);
                     
-                    console.log(doc.id, " => ", doc.data());
                 });
-                // this.dataSource = new MatTableDataSource(this.docs);
-                
-            });
-            console.log(this.items);
-        }else{
-                console.log("No hay usuario")
-        }
+                //console.log(this.items);
+            }else{
+                    console.log("No hay usuario")
+            }
+        })
     }
 
     addNewExpense(){
