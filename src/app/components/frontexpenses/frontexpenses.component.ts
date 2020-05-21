@@ -19,8 +19,7 @@ export class frontExpensesComponent implements OnInit{
     items: Observable<any[]>;
     
     //public data :Array<User> = [];
-    // displayedColumns: string[] = ['name','amount'];
-    // dataSource: MatTableDataSource<User>;
+   
     amount:string;
     category:string;
     date:string;
@@ -30,36 +29,35 @@ export class frontExpensesComponent implements OnInit{
 
     constructor(private userService: UserService,private router: Router,firestore: AngularFirestore) {
         
-        // this.items = db.collection('usuarios').doc(user.uid).collection("expenses").valueChanges();
-        firebase.auth().onAuthStateChanged(function(user) {
-            if (user) {
-            this.items = firestore.collection('usuarios').doc(user.uid).collection("expenses").valueChanges();
-            }
-        })
+        // firebase.auth().onAuthStateChanged(function(user) {
+        //     if (user) {
+        //     this.items = firestore.collection('usuarios').doc(user.uid).collection("expenses").valueChanges();
+        //     }
+        // })
     }
 
     ngOnInit(): void {
         
-        firebase.auth().onAuthStateChanged(function(user) {
-            if (user) {
-                db.collection("usuarios").doc(user.uid).collection("expenses").get().then(function(querySnapshot) {
-                    querySnapshot.forEach(function(doc) {
-                        // this.items
-                        // doc.data() is never undefined for query doc snapshots
-                        // this.docs.push(doc.data());
-                        this.items.push(doc.data());
-                        this.amounts.push(doc.data().amount);
-                        console.log(this.amounts);
-                        console.log(doc.id, " => ", doc.data().amount);
-                    });
-                    // this.dataSource = new MatTableDataSource(this.docs);
+        // firebase.auth().onAuthStateChanged(function(user) {
+        //     if (user) {
+        //         db.collection("usuarios").doc(user.uid).collection("expenses").get().then(function(querySnapshot) {
+        //             querySnapshot.forEach(function(doc) {
+        //                 // this.items
+        //                 // doc.data() is never undefined for query doc snapshots
+        //                 // this.docs.push(doc.data());
+        //                 this.items.push(doc.data());
+        //                 this.amounts.push(doc.data().amount);
+        //                 console.log(this.amounts);
+        //                 console.log(doc.id, " => ", doc.data().amount);
+        //             });
+       
                     
-                });
-                //console.log(this.items);
-            }else{
-                    console.log("No hay usuario")
-            }
-        })
+        //         });
+        //         //console.log(this.items);
+        //     }else{
+        //             console.log("No hay usuario")
+        //     }
+        // })
     }
 
     addNewExpense(){
