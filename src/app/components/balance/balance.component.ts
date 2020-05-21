@@ -9,13 +9,9 @@ import * as firebase from 'firebase';
 })
 export class BalanceComponent implements OnInit {
 
-  outcomeVal: number;
+  public diference: number;
 
-
-  constructor() {
-    
-    this.outcomeVal = 0;
-  }
+  constructor() {}
   ngOnInit(): void {}
 
   getBalance() {
@@ -45,20 +41,45 @@ export class BalanceComponent implements OnInit {
         return aux$;
       });
 
+      
+      console.log("resultado res ",getExample());
     }
-    localIncome.then((value) => {
-      console.log("suma ingesos ",value);
-    });
 
-    localExpenses.then((value) => {
-      console.log("suma gastos ",value);
-    });
-    
+
+    async function getExample() {
+
+      var income=localIncome.then((value) => {
+        console.log("suma ingesos ",value);
+        return value;
+      });
+      
+      
+      var expenses=localExpenses.then((value) => {
+        console.log("suma gastos ",value);
+        return value;
+      });
+
+      var resultA = await income;
+      
+      var resultB = await expenses;
+      
+      // this.diference=resultA-resultB;
+      // console.log("resultado ",this.diference);
+      return resultA-resultB;;
   }
+
+
+
+    console.log("resultado ",this.diference);
+    console.log("res");
+  }
+
+
+
       
       // console.log("incomes =", localIncome);
       // // console.log("totalIncomes=", this.incomeVal);
       // console.log("outcomes =", localOutcome);
-     // console.log("total => ", localIncome - localOutcome);
+    // console.log("total => ", localIncome - localOutcome);
   
 }
