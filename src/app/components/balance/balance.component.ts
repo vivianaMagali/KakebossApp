@@ -9,40 +9,56 @@ import * as firebase from 'firebase';
 })
 export class BalanceComponent implements OnInit {
 
-  incomeVal: number;
   outcomeVal: number;
 
+
   constructor() {
-    this.incomeVal = 0;
+    
     this.outcomeVal = 0;
   }
   ngOnInit(): void {}
 
   getBalance() {
+    
     var user = firebase.auth().currentUser;
     if (user) {
-
-      //logro obtener la suma total de los vlores de Income, pero estos son devueltos en formato de objeto promesa, icompatible con un type number
-      var localIncome = db.collection("usuarios").doc(user.uid).collection("incomes").get().then(function (totalIncomes) {
-        var aux = 0;
+      var localIncome = db.collection("usuarios").doc(user.uid).collection("incomes").get().then(function(totalIncomes){
+        var aux$ = 0;
         totalIncomes.forEach(function (object) {
-          return aux += +object.data().amount;
+          //console.log("amount "+aux$);
+          return aux$ += +object.data().amount;
+          
         });
-        return aux;
+        //console.log("amounts "+aux$);
+        return aux$;
       });
 
-      //logro obtener la suma total de los vlores de Outcome, pero estos son devueltos en formato de objeto promesa, icompatible con un type number
-      var localOutcome = db.collection("usuarios").doc(user.uid).collection("expenses").get().then(function (totalOutcomes) {
-        var aux = 0;
-        totalOutcomes.forEach(function (object) {
-          return aux += +object.data().amount;
+
+      var localExpenses = db.collection("usuarios").doc(user.uid).collection("expenses").get().then(function(totalExpenses){
+        var aux$ = 0;
+        totalExpenses.forEach(function (object) {
+          //console.log("amount "+aux$);
+          return aux$ += +object.data().amount;
+          
         });
-        return aux;
+        //console.log("amounts "+aux$);
+        return aux$;
       });
 
-      console.log("incomes =", localIncome);
-      console.log("outcomes =", localOutcome);
-     // console.log("total => ", localIncome - localOutcome);
     }
+    localIncome.then((value) => {
+      console.log("suma ingesos ",value);
+    });
+
+    localExpenses.then((value) => {
+      console.log("suma gastos ",value);
+    });
+    
   }
+      
+      // console.log("incomes =", localIncome);
+      // // console.log("totalIncomes=", this.incomeVal);
+      // console.log("outcomes =", localOutcome);
+     // console.log("total => ", localIncome - localOutcome);
+  
 }
