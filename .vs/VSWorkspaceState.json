@@ -3,9 +3,12 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\components",
-    "\\src\\app\\components\\incomes"
+    "\\src\\app\\components\\balance",
+    "\\src\\app\\components\\incomes",
+    "\\src\\app\\services",
+    "\\src\\app\\services\\utils",
+    "\\src\\environments"
   ],
-  "SelectedNode": "\\src\\app\\components\\incomes\\incomes.component.ts",
+  "SelectedNode": "\\src\\app\\app.component.spec.ts",
   "PreviewInSolutionExplorer": false
 }

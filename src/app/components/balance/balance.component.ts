@@ -30,7 +30,6 @@ export class BalanceComponent implements OnInit {
         });
         return aux;
       });
-      console.log(localIncome);
 
       //logro obtener la suma total de los vlores de Outcome, pero estos son devueltos en formato de objeto promesa, icompatible con un type number
       var localOutcome = db.collection("usuarios").doc(user.uid).collection("expenses").get().then(function (totalOutcomes) {
