@@ -11,7 +11,7 @@ import { frontUUComponent } from './components/frontUnloggedUser/frontUnloggedUs
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'inicio', component: MainComponent},
-  { path: '', component: MainComponent},
+  { path: '', component: frontUUComponent},
   { path: 'expenses', component: ExpensesComponent},
   { path: 'incomes', component: IncomesComponent},
   { path: 'profile', component: UserProfileComponent},
