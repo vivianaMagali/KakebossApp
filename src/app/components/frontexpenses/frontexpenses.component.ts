@@ -1,12 +1,22 @@
-import  {Component, OnInit, NgZone, ChangeDetectorRef, ChangeDetectionStrategy} from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table';
+import  {Component, OnInit} from '@angular/core';
 import { db } from 'src/app/services/utils/firebase';
 import { UserService } from '../../services/userService';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { User, firestore } from 'firebase';
 import { AngularFirestore } from '@angular/fire/firestore';
 import * as firebase from 'firebase';
+
+import {MatPaginator} from '@angular/material/paginator';
+import {MatSort} from '@angular/material/sort';
+import {MatTableDataSource} from '@angular/material/table';
+// import { AngularFireDatabase } from 'angularfire2/database';
+
+export interface Expense {
+    category: string;
+    name_expense: string;
+    date: string;
+    amount:number;
+  }
 
 
 @Component({
@@ -16,24 +26,33 @@ import * as firebase from 'firebase';
 
 })
 export class frontExpensesComponent implements OnInit{
-    items: Observable<any[]>;
-    
-    //public data :Array<User> = [];
-   
-    amount:string;
-    category:string;
-    date:string;
-    name:string;
-    public amounts:Array<number>=[30];
-    // public docs: [];
+
+    displayedColumns: string[] = ['name', 'amount'];
+    dataSource: MatTableDataSource<Expense>;
+    public items: Observable<any[]>;
+    public gastos: Array<Expense> = [];
+    // amount:string;
+    // category:string;
+    // date:string;
+    // name:string;
 
     constructor(private userService: UserService,private router: Router,firestore: AngularFirestore) {
         
-        // firebase.auth().onAuthStateChanged(function(user) {
-        //     if (user) {
-        //     this.items = firestore.collection('usuarios').doc(user.uid).collection("expenses").valueChanges();
-        //     }
-        // })
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                // this.items = firestore.collection('usuarios').doc(user.uid).collection("expenses").valueChanges().subscribe(amounts => {amounts.forEach(exp => {this.gastos.push(exp);})
+                //     this.dataSource = new MatTableDataSource(this.gastos);
+                // });
+                this.items=db.collection('usuarios').doc(user.uid).collection("expenses").onSnapshot;
+                this.items.subscribe(expenses => {expenses.forEach(gasto => {
+                      this.gastos.push(gasto);
+                    })
+                    this.dataSource = new MatTableDataSource(this.gastos);
+                })
+                this.dataSource = new MatTableDataSource(this.gastos);
+            }
+        })
+        
     }
 
     ngOnInit(): void {
@@ -42,22 +61,23 @@ export class frontExpensesComponent implements OnInit{
         //     if (user) {
         //         db.collection("usuarios").doc(user.uid).collection("expenses").get().then(function(querySnapshot) {
         //             querySnapshot.forEach(function(doc) {
-        //                 // this.items
-        //                 // doc.data() is never undefined for query doc snapshots
+                        
+                        
+        //                 // return doc.data().amount;
         //                 // this.docs.push(doc.data());
-        //                 this.items.push(doc.data());
-        //                 this.amounts.push(doc.data().amount);
-        //                 console.log(this.amounts);
-        //                 console.log(doc.id, " => ", doc.data().amount);
+                      
+        //                 // this.amounts.push(doc.data().amount);
+        //                 // console.log(this.amounts);
+        //                 //console.log(doc.id, " => ", doc.data());
         //             });
        
-                    
         //         });
-        //         //console.log(this.items);
+              
         //     }else{
         //             console.log("No hay usuario")
         //     }
         // })
+     
     }
 
     addNewExpense(){
