@@ -32,7 +32,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatTabsModule } from '@angular/material/tabs';
-
+import {MatTableModule} from '@angular/material/table';
+import {MatTableDataSource} from '@angular/material/table';
 
 /** OUR COMPONENTS */
 
@@ -46,6 +47,13 @@ import { SignupComponent } from './components/signup/signup.component';
 import { SignoutComponent } from './components/signout/signout.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
+import { UserService } from './services/userService';
+import { MainComponent } from './main/main.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { BalanceComponent } from './components/balance/balance.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +65,10 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     IncomesComponent,
     SignoutComponent,
     UserProfileComponent,
-    frontUUComponent
+    MainComponent,
+    ToolbarComponent,
+    frontUUComponent,
+    BalanceComponent,
   ],
   imports: [
     BrowserModule,
@@ -84,11 +95,12 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     MatDatepickerModule,
     MatNativeDateModule,
     MatTabsModule,
+    MatTableModule,
   ],
   exports: [
     MatFormFieldModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

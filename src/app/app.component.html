@@ -1,29 +1,7 @@
 <!--
   <li class="text" *ngFor="let item of items | async">
 -->
-<mat-toolbar color="primary">
-    <mat-toolbar-row>
-      <span>Kakeboss</span>
-      <span class="example-spacer"></span>
-      <button mat-button [matMenuTriggerFor]="menu">Log in/Register</button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item>Log in</button>
-        <button mat-menu-item>Register</button>
-      </mat-menu>
-  </mat-toolbar-row>
-</mat-toolbar>
 
-<!--<div class="components">
-  <app-frontincomes></app-frontincomes>
-  <app-frontexpenses></app-frontexpenses>
-</div>
-<app-incomes></app-incomes>
-<hr/>
-<app-expenses></app-expenses>
-<app-login></app-login>
-<app-signup></app-signup>
-<app-user-profile></app-user-profile>
-<app-signout></app-signout>-->
 
-<app-frontUU></app-frontUU>
 
+<router-outlet></router-outlet>

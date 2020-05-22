@@ -1,3 +1,4 @@
+<app-toolbar></app-toolbar>
 <div class="container">
     <span class="title">Login</span><br>
     
@@ -11,7 +12,8 @@
         <input matInput id="password" type="password" placeholder="Password" class="form-control" [(ngModel)]="password" />
       </mat-form-field>
        
-      <button mat-button color="primary"  class="btn btn-primary" (click)="signIn()">Login</button>
+      <button mat-button color="primary"  class="btn btn-primary" (click)="login()">Login</button>
+      <button mat-button color="primary" (click)="cancel()">Cancel</button>
 
     <ng-container *ngIf="errorMessage">
       <span class="error" >{{errorMessage}}</span>

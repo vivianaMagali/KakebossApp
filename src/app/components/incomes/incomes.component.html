@@ -1,22 +1,25 @@
+
+<app-toolbar></app-toolbar>
 <div class="container">
   <mat-label class="title">Add Income</mat-label>
 
   <mat-form-field class="example-full-width">
     <mat-label>Name income</mat-label>
-    <input type="text" name="name_income" matInput [(ngModel)]="name_income">
+    <input type="text" name="name_income" matInput [(ngModel)]="name_income" required>
   </mat-form-field>
 
   <mat-form-field>
     <mat-label>Choose a date</mat-label>
-    <input matInput [matDatepicker]="picker" [(ngModel)]="date">
+    <input matInput [matDatepicker]="picker" [(ngModel)]="date" required>
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
     <mat-label>Add income</mat-label>
-    <input type="number" name="amount" matInput [(ngModel)]="amount">
+    <input type="number" name="amount" matInput [(ngModel)]="amount" required>
   </mat-form-field>€
 
-  <button mat-button (click)="addIncome()">Acept</button>
+  <button mat-button color="primary" (click)="addIncome()">Accept</button>
+  <button mat-button color="primary" (click)="cancel()">Cancel</button>
 </div>

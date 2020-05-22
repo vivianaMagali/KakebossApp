@@ -6,7 +6,7 @@
             <mat-card-subtitle>Here you can see your incomes</mat-card-subtitle>
         <div class="buttons">
             <mat-card-actions>
-                <button mat-button>Add</button>
+                <button mat-button (click)="addNewIncomes()">Add</button>
             <!--any more buttons?-->
             </mat-card-actions>
         </div>
@@ -17,12 +17,12 @@
         <div class="incomeList">  
             <div class="income">
                 <div class="info">
-                    <p class="name">Sueldo mes</p>
-                    <p class="date">1/05/2020</p>
+                    <p class="name">{{name}}</p>
+                    <p class="date">{{date}}</p>
                 </div>
-                <p class="money">1200€</p>
+                <p class="money">{{amount}}€</p>
             </div>
-            <mat-divider></mat-divider>
+            <!-- <mat-divider></mat-divider>
             <div class="income">
                 <div class="info">
                     <p class="name">Devolución Hacienda</p>
@@ -30,14 +30,14 @@
                 </div>
                 <p class="money">80€</p>
             </div>
-            <mat-divider></mat-divider>
-            <div class="income">
+            <mat-divider></mat-divider> -->
+            <!-- <div class="income">
                 <div class="info">
                     <p class="name">Regalo abuela</p>
                     <p class="date">10/05/2020</p>
                 </div>
                 <p class="money">20€</p>
-            </div>
+            </div> -->
         </div>          
     </mat-card-content>
 </mat-card>
