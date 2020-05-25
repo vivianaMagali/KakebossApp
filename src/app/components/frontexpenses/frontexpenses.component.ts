@@ -38,20 +38,20 @@ export class frontExpensesComponent implements OnInit{
 
     constructor(private userService: UserService,private router: Router,firestore: AngularFirestore) {
         
-        firebase.auth().onAuthStateChanged(function(user) {
-            if (user) {
-                // this.items = firestore.collection('usuarios').doc(user.uid).collection("expenses").valueChanges().subscribe(amounts => {amounts.forEach(exp => {this.gastos.push(exp);})
-                //     this.dataSource = new MatTableDataSource(this.gastos);
-                // });
-                this.items=db.collection('usuarios').doc(user.uid).collection("expenses").onSnapshot;
-                this.items.subscribe(expenses => {expenses.forEach(gasto => {
-                      this.gastos.push(gasto);
-                    })
-                    this.dataSource = new MatTableDataSource(this.gastos);
-                })
-                this.dataSource = new MatTableDataSource(this.gastos);
-            }
-        })
+        // firebase.auth().onAuthStateChanged(function(user) {
+        //     if (user) {
+        //         // this.items = firestore.collection('usuarios').doc(user.uid).collection("expenses").valueChanges().subscribe(amounts => {amounts.forEach(exp => {this.gastos.push(exp);})
+        //         //     this.dataSource = new MatTableDataSource(this.gastos);
+        //         // });
+        //         this.items=db.collection('usuarios').doc(user.uid).collection("expenses").onSnapshot;
+        //         this.items.subscribe(expenses => {expenses.forEach(gasto => {
+        //               this.gastos.push(gasto);
+        //             })
+        //             this.dataSource = new MatTableDataSource(this.gastos);
+        //         })
+        //         this.dataSource = new MatTableDataSource(this.gastos);
+        //     }
+        // })
         
     }
 

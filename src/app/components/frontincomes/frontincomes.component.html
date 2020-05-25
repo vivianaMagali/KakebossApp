@@ -15,16 +15,16 @@
     <!--ngFor to the incomes table-->
     <!--Click on the name to see more information?-->
         <div class="incomeList">  
-            <div class="income">
-                <div class="info">
+            <div class="income" *ngFor="let item of items | async">
+                <div class="info" >
                     
                     <ul>
                         <li class="text" >
-                          {{name}}
+                            {{item.name_income}}
                         </li>
 
                         <li class="text" >
-                            {{date}}
+                            {{item.date}}
                         </li>
 
                     </ul>
@@ -32,7 +32,7 @@
                 </div>
                 
                 <li class="text" >
-                    {{amount}}
+                    {{item.amount}}
                 </li>
 
             </div>
