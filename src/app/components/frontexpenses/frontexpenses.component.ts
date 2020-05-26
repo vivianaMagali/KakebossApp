@@ -1,11 +1,9 @@
-import  {Component, OnInit, NgZone, ChangeDetectorRef, ChangeDetectionStrategy} from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table';
-import { db } from 'src/app/services/utils/firebase';
+import  {Component} from '@angular/core';
 import { UserService } from '../../services/userService';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { User, firestore } from 'firebase';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { db } from 'src/app/services/utils/firebase';
 import * as firebase from 'firebase';
 
 
@@ -15,54 +13,39 @@ import * as firebase from 'firebase';
     styleUrls: ['./frontexpenses.component.css'],
 
 })
-export class frontExpensesComponent implements OnInit{
-    items: Observable<any[]>;
-    
-    //public data :Array<User> = [];
+export class frontExpensesComponent {
+
+    public items: Observable<any[]>;
    
-    amount:string;
-    category:string;
-    date:string;
-    name:string;
-    public amounts:Array<number>=[30];
-    // public docs: [];
 
     constructor(private userService: UserService,private router: Router,firestore: AngularFirestore) {
-        
-        // firebase.auth().onAuthStateChanged(function(user) {
-        //     if (user) {
-        //     this.items = firestore.collection('usuarios').doc(user.uid).collection("expenses").valueChanges();
-        //     }
-        // })
+        var user = this.userService.getCurrentUser();
+        if (user) {
+            this.items = firestore.collection('usuarios').doc(user.uid).collection("expenses").valueChanges({ idField: 'eventId' });
+
+        }
     }
 
-    ngOnInit(): void {
-        
-        // firebase.auth().onAuthStateChanged(function(user) {
-        //     if (user) {
-        //         db.collection("usuarios").doc(user.uid).collection("expenses").get().then(function(querySnapshot) {
-        //             querySnapshot.forEach(function(doc) {
-        //                 // this.items
-        //                 // doc.data() is never undefined for query doc snapshots
-        //                 // this.docs.push(doc.data());
-        //                 this.items.push(doc.data());
-        //                 this.amounts.push(doc.data().amount);
-        //                 console.log(this.amounts);
-        //                 console.log(doc.id, " => ", doc.data().amount);
-        //             });
-       
-                    
-        //         });
-        //         //console.log(this.items);
-        //     }else{
-        //             console.log("No hay usuario")
-        //     }
-        // })
-    }
 
     addNewExpense(){
         this.router.navigate(['/expenses']);
     }
+
+    removeExpense(id_expense){
+        console.log("hice click en removeExpense");
+        var user = firebase.auth().currentUser;
+        if(user){
+        
+                db.collection("usuarios").doc(user.uid).collection("expenses").doc(id_expense).delete().then(function() {
+                    console.log("Document successfully deleted!");
+                }).catch(function(error) {
+                    console.error("Error removing document: ", error);
+                });
+            
+        }
+        
+    }
+
 
 }
 

@@ -1,7 +1,11 @@
-import  {Component, NgZone, OnInit} from '@angular/core';
-import { UserService } from 'src/app/services/userService';
+import  {Component} from '@angular/core';
+import { UserService } from '../../services/userService';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { db } from 'src/app/services/utils/firebase';
+import * as firebase from 'firebase';
+
 
 @Component({
     selector: 'app-frontincomes',
@@ -9,40 +13,33 @@ import { db } from 'src/app/services/utils/firebase';
     styleUrls: ['./frontincomes.component.css'],
 })
 export class frontIncomesComponent {
+    items: Observable<any[]>;
 
-    // private data;
-    amount:string;
-    category:string;
-    date:string;
-    name:string;
-
-    constructor(private userService: UserService,private router: Router) {
-    }
-
-    ngOnInit(): void {
-        // var user = this.userService.getCurrentUser()
-        // if (user) {
-        //     db.collection("usuarios").doc(user.uid).collection("incomes").doc("data-incomes").get()
-        //         .then((doc) => {
-        //             if(doc.exists){
-        //                 // this.data = doc.data()
-        //                 // console.log(this.data)
-        //                 this.amount = doc.data().amount;
-        //                 this.name = doc.data().name_income;
-        //                 this.date = doc.data().date;
-        //                 console.log(this.amount);
-        //                 console.log(this.name);
-        //                 console.log(this.date);
-        //             }else{
-        //                 console.log("doc no existe")
-        //             }
-        //         })
-        // }else{
-        //         console.log("No hay usuario")
-        // }
+    constructor(private userService: UserService,private router: Router,firestore: AngularFirestore) {
+        var user = this.userService.getCurrentUser();
+        if (user) {
+            this.items = firestore.collection('usuarios').doc(user.uid).collection("incomes").valueChanges({ idField: 'eventId' });
+        }
     }
 
     addNewIncomes(){
         this.router.navigate(['/incomes']);
     }
+
+
+    removeIncome(id_expense){
+        console.log("hice click en removeIncome");
+        var user = firebase.auth().currentUser;
+        if(user){
+        
+                db.collection("usuarios").doc(user.uid).collection("incomes").doc(id_expense).delete().then(function() {
+                    console.log("Document successfully deleted!");
+                }).catch(function(error) {
+                    console.error("Error removing document: ", error);
+                });
+            
+        }
+        
+    }
+
 }
