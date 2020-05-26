@@ -1,9 +1,8 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { db } from 'src/app/services/utils/firebase';
 import * as firebase from 'firebase';
-import { Routes, RouterModule, Router } from '@angular/router';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { AngularFirestore } from '@angular/fire/firestore/firestore';
+import {  Router } from '@angular/router';
+
 
 
 @Component({
