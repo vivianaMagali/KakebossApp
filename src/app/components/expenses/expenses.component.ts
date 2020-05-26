@@ -3,6 +3,8 @@ import { db } from 'src/app/services/utils/firebase';
 import * as firebase from 'firebase';
 import { Routes, RouterModule, Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore/firestore';
+
 
 @Component({
   selector: 'app-expenses',
@@ -18,7 +20,9 @@ export class ExpensesComponent implements OnInit {
   date:string;
   categories: string[] = ['Supervivencia', 'Ocio y vicio', 'Cultura', 'Extras'];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) { 
+    
+  }
 
   ngOnInit(): void {
     
@@ -31,16 +35,17 @@ export class ExpensesComponent implements OnInit {
     console.log("hice click en addExpense");
     // firebase.auth().onAuthStateChanged(function(user){
       console.log("user "+user);
+     
         if (user) {
+        
         db.collection("usuarios").doc(user.uid).collection("expenses").add({
               name_expense: this.name_expense,
               amount: this.amount,
               category: this.chosenCategory,
-              date:this.date
+              date:this.date,              
         })
       }
       this.router.navigate(['/inicio']);
-    // })
     
   }
 
