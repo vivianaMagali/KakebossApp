@@ -16,8 +16,7 @@ const routes: Routes = [
   { path: 'incomes', component: IncomesComponent},
   { path: 'profile', component: UserProfileComponent},
   { path: 'signup', component: SignupComponent},
-  { path: 'unloggedMain', component: frontUUComponent}
- 
+  { path: 'unloggedMain', component: frontUUComponent} 
 ];
 
 @NgModule({
