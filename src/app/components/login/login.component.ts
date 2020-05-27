@@ -17,7 +17,6 @@ export class LoginComponent {
 
  constructor(private afAuth: AngularFireAuth,
    private router: Router,
-   private ngZone: NgZone, 
    private _snackBar: MatSnackBar) {
  }
 
