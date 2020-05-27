@@ -12,7 +12,26 @@
     </mat-card-header>
     <mat-card-content>
    
-   
+        <mat-form-field appearance="fill">
+            <mat-label>Filter category</mat-label>
+            <mat-select>
+              <mat-option (click)="getExpenseBySupervivencia()" value="supervivencia">Supervivencia</mat-option>
+              <mat-option (click)="getExpenseByOcio()" value="ocio">Ocio y vicio</mat-option>
+              <!-- <mat-option (click)="getExpenseByCultura()" value="cultura">Cultura</mat-option>
+              <mat-option (click)="getExpenseByExtras()" value="extras">Extras</mat-option> -->
+            </mat-select>
+          </mat-form-field>
+
+          <!-- <mat-form-field appearance="fill">
+            <mat-label>Filter category</mat-label>
+            <mat-select required (selectionChange)="changeCategory($event.value)" (click)="getExpenseByCategory()" >
+              <mat-option  *ngFor="let category of categories"  [value]="category.value" >
+                {{category.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field> -->
+
+
         <div class="expenseList" >  
             <div class="expense"  *ngFor="let item of items | async">
                 <div class="info">

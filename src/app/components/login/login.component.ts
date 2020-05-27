@@ -18,14 +18,7 @@ export class LoginComponent implements OnInit {
    private router: Router,
    private ngZone: NgZone) { }
  
-  ngOnInit() {
-    // this.afAuth.user.subscribe(user => {
-    //   if (user) {
-    //     this.ngZone.run(() => {
-    //       this.router.navigate(['/inicio']);
-    //   });
-    // }});
-  }
+  ngOnInit() {}
 
 
   login() { 

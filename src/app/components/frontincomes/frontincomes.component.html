@@ -16,23 +16,19 @@
         <div class="incomeList">  
             <div class="income" *ngFor="let item of items | async">
                 <div class="info" >
-                    
                     <ul>
                         <li class="text" >
                             {{item.name_income}}
                         </li>
-
                         <li class="text" >
                             {{item.date}}
                         </li>
-
                     </ul>
-        
                 </div>
                 <li class="text" >
                     {{item.amount}}€
                 </li>
-                <button (click)="removeIncome(item.eventId)"> remove</button>
+                <button (click)="removeIncome(item.eventId)">remove</button>
             </div>
         </div>          
     </mat-card-content>

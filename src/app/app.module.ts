@@ -55,6 +55,7 @@ import { BalanceComponent } from './components/balance/balance.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,6 +71,7 @@ import { BalanceComponent } from './components/balance/balance.component';
     ToolbarComponent,
     frontUUComponent,
     BalanceComponent,
+
   ],
   imports: [
     BrowserModule,
