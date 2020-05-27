@@ -27,7 +27,7 @@ export class LoginComponent {
 
  message(){
   console.log("hice click en login"); 
-  this._snackBar.open( "Usuario Logueado", "", {
+  this._snackBar.open( "¡Bienvenido a Kakeboss!", "", {
     duration: 2000,
   });
 }

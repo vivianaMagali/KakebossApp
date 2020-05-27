@@ -2,6 +2,7 @@ import { Component, OnInit, NgZone } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-signup',
@@ -14,7 +15,8 @@ export class SignupComponent implements OnInit {
   errorMessage:string='';
   constructor(private afAuth: AngularFireAuth,
     private router: Router,
-    private ngZone: NgZone) {}
+    private ngZone: NgZone,
+    private _snackBar: MatSnackBar) {}
 
     name: string;
     surname: string;
@@ -31,6 +33,13 @@ export class SignupComponent implements OnInit {
       return false;
     }
  }
+
+ message(){
+  console.log("hice click en login"); 
+  this._snackBar.open( "Usuario registrado!", "", {
+    duration: 2000,
+  });
+}
 
   ngOnInit(): void {}
 
