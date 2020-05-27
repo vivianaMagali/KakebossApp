@@ -36,6 +36,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatDialogModule} from '@angular/material/dialog';
 
 /** OUR COMPONENTS */
 
@@ -53,6 +54,8 @@ import { UserService } from './services/userService';
 import { MainComponent } from './main/main.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { BalanceComponent } from './components/balance/balance.component';
+import { DialogComponent } from './components/dialog/dialog.component';
+
 
 
 
@@ -71,6 +74,7 @@ import { BalanceComponent } from './components/balance/balance.component';
     ToolbarComponent,
     frontUUComponent,
     BalanceComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -99,11 +103,14 @@ import { BalanceComponent } from './components/balance/balance.component';
     MatTabsModule,
     MatTableModule,
     MatSnackBarModule,
+    MatDialogModule,
   
   ],
   exports: [
     MatFormFieldModule,
     MatSnackBarModule,
+    MatDialogModule,
+
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
