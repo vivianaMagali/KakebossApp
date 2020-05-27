@@ -3,8 +3,6 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-
-
 @Component({
  selector: 'app-login',
  templateUrl: './login.component.html',
@@ -16,7 +14,6 @@ export class LoginComponent {
   errorMessage = '';
   username:string;
   password:string;
-  title:string="Usuario logueado";
 
  constructor(private afAuth: AngularFireAuth,
    private router: Router,
