@@ -35,6 +35,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import {MatTableModule} from '@angular/material/table';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 /** OUR COMPONENTS */
 
@@ -97,10 +98,12 @@ import { BalanceComponent } from './components/balance/balance.component';
     MatNativeDateModule,
     MatTabsModule,
     MatTableModule,
+    MatSnackBarModule,
   
   ],
   exports: [
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSnackBarModule,
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

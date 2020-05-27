@@ -1,36 +1,38 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit, NgZone, Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 
 @Component({
  selector: 'app-login',
  templateUrl: './login.component.html',
- styleUrls: ['./login.component.css']
+ styleUrls: ['./login.component.css'],
 })
 
-export class LoginComponent implements OnInit {
+@Injectable()
+export class LoginComponent {
   errorMessage = '';
   username:string;
   password:string;
+  title:string="Usuario logueado";
 
  constructor(private afAuth: AngularFireAuth,
    private router: Router,
-   private ngZone: NgZone) { }
- 
-  ngOnInit() {
-    // this.afAuth.user.subscribe(user => {
-    //   if (user) {
-    //     this.ngZone.run(() => {
-    //       this.router.navigate(['/inicio']);
-    //   });
-    // }});
-  }
+   private ngZone: NgZone, 
+   private _snackBar: MatSnackBar) {
+ }
 
+
+ message(){
+  console.log("hice click en login"); 
+  this._snackBar.open( "Usuario Logueado", "", {
+    duration: 2000,
+  });
+}
 
   login() { 
-    console.log("hice click en login"); 
-    
     this.afAuth.signInWithEmailAndPassword(this.username, this.password).then(() => {
       this.router.navigate(['/inicio']);
     }).catch(response => {
@@ -42,7 +44,6 @@ export class LoginComponent implements OnInit {
   }
 
   cancel(){
-    //enroutamiento a pagina principal
     this.router.navigate(['/inicio']); 
   }
 
