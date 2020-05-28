@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { db } from 'src/app/services/utils/firebase';
 import * as firebase from 'firebase';
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
 
 // interface SelectCategory {
@@ -51,7 +51,6 @@ export class frontExpensesComponent {
                 this.items = firestore.collection('usuarios').doc(user.uid).collection("expenses").valueChanges({ idField: 'eventId' });
             }
         }
-        
     }
 
 
@@ -87,14 +86,14 @@ export class frontExpensesComponent {
 
 
     remove(id_expense){
-            var user = firebase.auth().currentUser;
-            if(user){
-                db.collection("usuarios").doc(user.uid).collection("expenses").doc(id_expense).delete().then(function() {
-                    console.log("Document successfully deleted!");
-                }).catch(function(error) {
-                    console.error("Error removing document: ", error);
-                });
-            }
+        var user = firebase.auth().currentUser;
+        if(user){
+            db.collection("usuarios").doc(user.uid).collection("expenses").doc(id_expense).delete().then(function() {
+                console.log("Document successfully deleted!");
+            }).catch(function(error) {
+                console.error("Error removing document: ", error);
+            });
+        }
     }
 
    
@@ -133,7 +132,6 @@ export class frontExpensesComponent {
             querySnapshot.forEach(function(doc) {
                 vec.push(doc.id);
             });
-            // console.log(vec);
             })
             console.log(vec);
             this.showExpensesByCategory(vec);
