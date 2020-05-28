@@ -54,7 +54,7 @@ export class SignupComponent implements OnInit {
           surname: this.surname
         });
       })
-      this.router.navigate(['/inicio']); 
+      this.router.navigate(['/loggedMain']); 
     }else{
       console.log("no pude crear usuario por contraseñas no iguales");
     }
@@ -62,7 +62,7 @@ export class SignupComponent implements OnInit {
 
   cancel(){
     //enroutamiento a pagina principal
-    this.router.navigate(['/inicio']); 
+    this.router.navigate(['/loggedMain']); 
   }
 
 
