@@ -20,6 +20,6 @@
     <input type="number" name="amount" matInput [(ngModel)]="amount" required>€
   </mat-form-field>
 
-  <button mat-button color="primary" (click)="addIncome()">Accept</button>
+  <button mat-stroked-button mat-button color="primary" (click)="addIncome()" (click)="message()">Accept</button>
   <button mat-button color="primary" (click)="cancel()">Cancel</button>
 </div>

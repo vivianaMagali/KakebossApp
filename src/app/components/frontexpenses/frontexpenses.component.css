@@ -1,5 +1,5 @@
-.expenses-card{
-    max-width: 400px;
+ .expenses-card{
+    width: auto;
     height: auto;
     margin: 10px;
 }
@@ -11,26 +11,15 @@ mat-card-header{
     border-radius: 10px;
 } 
 
- .buttons{
+.buttons{
     padding-right: 20px;
+    
 }
 
-.expense{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    padding-left:10px;
-    padding-right: 10px;
+.button-remove{
+    background-color: rgba(103,58,183, 0.2);
 }
 
-.expense:hover{
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+.mat-form-field + .mat-form-field {
+    margin-left: 8px;
 }
-
-.name{
-    font-size: 20px;
-    font-weight: 500;
-}
-
-
