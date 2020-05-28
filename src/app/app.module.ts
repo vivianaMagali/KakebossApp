@@ -36,6 +36,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 
+
 /** OUR COMPONENTS */
 
 import { frontUUComponent } from './components/frontUnloggedUser/frontUnloggedUser.component';
@@ -102,6 +103,7 @@ import { BalanceComponent } from './components/balance/balance.component';
   ],
   exports: [
     MatFormFieldModule,
+    MatRadioModule,
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
