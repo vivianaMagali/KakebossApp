@@ -8,6 +8,8 @@ import * as firebase from 'firebase';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
 
+
+
 // interface SelectCategory {
 //     categoryValue$: boolean;
 // }
@@ -34,13 +36,6 @@ export class frontExpensesComponent {
     //     {value: 'cat-3', viewValue: 'Extras'}
     //   ];
     
-
-    // openDialog() {
-    //     const dialogRef = this.dialog.open(DialogComponent);
-    //     dialogRef.afterClosed().subscribe(result => {
-    //         console.log('The dialog was closed');
-    //     });
-    // } 
 
 
     constructor(private userService: UserService,private router: Router,private firestore: AngularFirestore,public dialog: MatDialog) {
@@ -75,11 +70,10 @@ export class frontExpensesComponent {
     }
 
     openDialog(id_expense) {
-        const dialogRef = this.dialog.open(DialogComponent,id_expense);
-        
-        
+        const dialogRef = this.dialog.open(DialogComponent);
         dialogRef.afterClosed().subscribe(result => {
-          console.log('The dialog was closed');
+            this.remove(id_expense);
+            console.log('The dialog was closed');
         });
         
       }

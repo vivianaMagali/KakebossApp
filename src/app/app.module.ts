@@ -37,6 +37,8 @@ import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDialogModule} from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 /** OUR COMPONENTS */
 
@@ -104,12 +106,13 @@ import { DialogComponent } from './components/dialog/dialog.component';
     MatTableModule,
     MatSnackBarModule,
     MatDialogModule,
-  
+    BrowserAnimationsModule,
   ],
   exports: [
     MatFormFieldModule,
     MatSnackBarModule,
     MatDialogModule,
+    BrowserAnimationsModule,
 
   ],
   providers: [UserService],
