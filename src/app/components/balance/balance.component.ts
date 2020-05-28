@@ -14,7 +14,7 @@ export class BalanceComponent implements OnInit {
   constructor() {}
   ngOnInit(): void {}
 
-  getBalance() {
+  async getBalance() {
     
     var user = firebase.auth().currentUser;
     if (user) {
@@ -42,36 +42,28 @@ export class BalanceComponent implements OnInit {
       });
 
       
-      console.log("resultado res ",getExample());
+      console.log('work?', await getExample());
+      return await getExample();
     }
 
 
     async function getExample() {
 
       var income=localIncome.then((value) => {
-        console.log("suma ingesos ",value);
+        //console.log("suma ingesos ",value);
         return value;
       });
       
       
       var expenses=localExpenses.then((value) => {
-        console.log("suma gastos ",value);
+        //console.log("suma gastos ",value);
         return value;
       });
 
       var resultA = await income;
-      
       var resultB = await expenses;
-      
-      // this.diference=resultA-resultB;
-      // console.log("resultado ",this.diference);
-      return resultA-resultB;;
-  }
-
-
-
-    console.log("resultado ",this.diference);
-    console.log("res");
+      return await (resultA-resultB);
+    }
   }
 
 
