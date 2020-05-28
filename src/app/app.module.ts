@@ -38,7 +38,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDialogModule} from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 /** OUR COMPONENTS */
 
@@ -107,13 +108,17 @@ import { DialogComponent } from './components/dialog/dialog.component';
     MatSnackBarModule,
     MatDialogModule,
     BrowserAnimationsModule,
+    MatSidenavModule,
+    MatExpansionModule,
   ],
   exports: [
     MatFormFieldModule,
     MatSnackBarModule,
     MatDialogModule,
+    MatFormFieldModule,
+    MatSidenavModule,
+    MatExpansionModule,
     BrowserAnimationsModule,
-
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

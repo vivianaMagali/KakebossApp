@@ -28,15 +28,8 @@ export class frontExpensesComponent {
     public cat:Observable<any[]>;
     categoryValue$: boolean=false;
     @ViewChild(DialogComponent) modal: DialogComponent;
-   
-    // categories: Category[] = [
-    //     {value: 'cat-0', viewValue: 'Supervivencia'},
-    //     {value: 'cat-1', viewValue: 'Ocio y vicio'},
-    //     {value: 'cat-2', viewValue: 'Cultura'},
-    //     {value: 'cat-3', viewValue: 'Extras'}
-    //   ];
+    panelOpenState = false;
     
-
 
     constructor(private userService: UserService,private router: Router,private firestore: AngularFirestore,public dialog: MatDialog) {
         var user = this.userService.getCurrentUser();
@@ -86,50 +79,13 @@ export class frontExpensesComponent {
                 console.log("Document successfully deleted!");
             }).catch(function(error) {
                 console.error("Error removing document: ", error);
-            });
+            });   
         }
     }
 
-   
 
+    showExpense(eventId){
 
-    // getExpenseByCategory(){
-    //     this.categoryValue=true;
-    //     var user = firebase.auth().currentUser;
-    //     if(user){
-    //       console.log("hay usuario");
-    //       db.collection("usuarios").doc(user.uid).collection("expenses").where("category", "==", this.categories.values)
-    //       .get()
-    //       .then(function(querySnapshot) {
-    //           querySnapshot.forEach(function(doc) {
-    //               console.log(doc.id, " => ", doc.data());
-    //           });
-    //       })
-    //       .catch(function(error) {
-    //           console.log("Error getting documents: ", error);
-    //       });
-    //     }
-    //   }
-
-
-    // function show() {
-    //     let li_name=document.createElement('li');
-    // }
-
-    getExpenseBySupervivencia(){
-        this.categoryValue$ = true;
-        var user = firebase.auth().currentUser;
-        var vec=[];
-        if(user){
-          db.collection("usuarios").doc(user.uid).collection("expenses").where("category", "==", "Supervivencia")
-          .onSnapshot(function(querySnapshot) {
-            querySnapshot.forEach(function(doc) {
-                vec.push(doc.id);
-            });
-            })
-            console.log(vec);
-            this.showExpensesByCategory(vec);
-        }
     }
 
 

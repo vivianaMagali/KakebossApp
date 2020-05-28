@@ -47,13 +47,13 @@ export class ExpensesComponent {
               date:this.date,              
         })
       }
-      this.router.navigate(['/inicio']);
+      this.router.navigate(['/loggedMain']);
     
   }
 
   cancel(){
     //enroutamiento a pagina principal
-    this.router.navigate(['/inicio']); 
+    this.router.navigate(['/loggedMain']); 
   }
 
 

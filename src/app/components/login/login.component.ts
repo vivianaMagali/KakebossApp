@@ -30,7 +30,7 @@ export class LoginComponent {
 
   login() { 
     this.afAuth.signInWithEmailAndPassword(this.username, this.password).then(() => {
-      this.router.navigate(['/inicio']);
+      this.router.navigate(['/loggedMain']);
     }).catch(response => {
       this.errorMessage = response.message;
       console.log("ERROR MSG: ", this.errorMessage)
@@ -40,7 +40,8 @@ export class LoginComponent {
   }
 
   cancel(){
-    this.router.navigate(['/inicio']); 
+    //enroutamiento a pagina principal
+    this.router.navigate(['/unloggedMain']); 
   }
 
 }

@@ -17,7 +17,7 @@ import { DialogComponent } from '../dialog/dialog.component';
 export class frontIncomesComponent {
     items: Observable<any[]>;
     @ViewChild(DialogComponent) modal: DialogComponent;
-
+    panelOpenState = false;
     constructor(private userService: UserService,private router: Router,firestore: AngularFirestore,public dialog: MatDialog) {
         var user = this.userService.getCurrentUser();
         if (user) {

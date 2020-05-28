@@ -37,11 +37,11 @@ export class IncomesComponent  {
         })
       }
     // })
-    this.router.navigate(['/inicio']);
+    this.router.navigate(['/loggedMain']);
   }
 
   cancel(){
-    this.router.navigate(['/inicio']); 
+    this.router.navigate(['/loggedMain']); 
   }
 
 

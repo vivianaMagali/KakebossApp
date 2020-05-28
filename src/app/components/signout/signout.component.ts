@@ -35,7 +35,7 @@ export class SignoutComponent {
         console.log("la sesion no se ha cerrado correctamente");
         // An error happened.
       });
-      this.router.navigate(['inicio-sin-login']);
+      this.router.navigate(['unloggedMain']);
     }else{
       console.log("no hay usuario logeado");
     }
