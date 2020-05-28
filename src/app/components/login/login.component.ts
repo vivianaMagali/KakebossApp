@@ -18,21 +18,14 @@ export class LoginComponent implements OnInit {
    private router: Router,
    private ngZone: NgZone) { }
  
-  ngOnInit() {
-    // this.afAuth.user.subscribe(user => {
-    //   if (user) {
-    //     this.ngZone.run(() => {
-    //       this.router.navigate(['/inicio']);
-    //   });
-    // }});
-  }
+  ngOnInit() { }
 
 
   login() { 
     console.log("hice click en login"); 
     
     this.afAuth.signInWithEmailAndPassword(this.username, this.password).then(() => {
-      this.router.navigate(['/inicio']);
+      this.router.navigate(['/loggedMain']);
     }).catch(response => {
       this.errorMessage = response.message;
       console.log("ERROR MSG: ", this.errorMessage)
@@ -43,7 +36,7 @@ export class LoginComponent implements OnInit {
 
   cancel(){
     //enroutamiento a pagina principal
-    this.router.navigate(['/inicio']); 
+    this.router.navigate(['/unloggedMain']); 
   }
 
 }
