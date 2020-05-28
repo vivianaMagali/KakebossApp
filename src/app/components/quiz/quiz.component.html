@@ -1,0 +1,33 @@
+<app-toolbar></app-toolbar>
+<div class="container">
+    <mat-label class="title">How was your month? Poll</mat-label>
+        <label>Have you archieved your monthly objectives?</label>
+        <mat-radio-group [(ngModel)]="monthlyObjectives">
+            <mat-radio-button color="primary" value="yes1">Yes</mat-radio-button>
+            <mat-radio-button color="primary" value="almost1">Almost</mat-radio-button>
+            <mat-radio-button color="primary" value="no1">No</mat-radio-button>
+        </mat-radio-group>
+
+        <label>Have you fulfilled your monthly promises?</label>
+        <mat-radio-group [(ngModel)]="monthlyPromises">
+            <mat-radio-button color="primary" value="yes2">Yes</mat-radio-button>
+            <mat-radio-button color="primary" value="almost2">Almost</mat-radio-button>
+            <mat-radio-button color="primary" value="no2">No</mat-radio-button>
+        </mat-radio-group>
+
+        <label>Have you managed to keep your inicial savings intact?<br></label>
+        <mat-radio-group [(ngModel)]="keepsIntact">
+            <mat-radio-button color="primary" value="yes3">Yes</mat-radio-button>
+            <mat-radio-button color="primary" value="no3">No</mat-radio-button>
+        </mat-radio-group>
+
+    <mat-form-field>
+        <label>Reflect here about your success, efforts, failures...</label>
+        <textarea matInput [(ngModel)]="comments" class="text"></textarea>
+    </mat-form-field>
+    
+    <button mat-button color="primary" (click)="quizDone()">Accept</button>
+    <button mat-button color="primary">Cancel</button>
+</div>
+
+  

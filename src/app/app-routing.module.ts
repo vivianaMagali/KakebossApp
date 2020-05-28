@@ -7,6 +7,7 @@ import { IncomesComponent } from './components/incomes/incomes.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { frontUUComponent } from './components/frontUnloggedUser/frontUnloggedUser.component';
+import { quiz } from './components/quiz/quiz.component'
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'incomes', component: IncomesComponent},
   { path: 'profile', component: UserProfileComponent},
   { path: 'signup', component: SignupComponent},
-  { path: 'unloggedMain', component: frontUUComponent} 
+  { path: 'unloggedMain', component: frontUUComponent},
+  { path: 'poll', component: quiz }
 ];
 
 @NgModule({

@@ -52,7 +52,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { SignoutComponent } from './components/signout/signout.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
-
+import { quiz } from './components/quiz/quiz.component'
 import { UserService } from './services/userService';
 import { MainComponent } from './main/main.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
@@ -77,7 +77,7 @@ import { DialogComponent } from './components/dialog/dialog.component';
     ToolbarComponent,
     frontUUComponent,
     BalanceComponent,
-    
+    quiz,
   ],
   imports: [
     BrowserModule,
@@ -113,6 +113,7 @@ import { DialogComponent } from './components/dialog/dialog.component';
   ],
   exports: [
     MatFormFieldModule,
+    MatRadioModule,
     MatSnackBarModule,
     MatDialogModule,
     MatFormFieldModule,

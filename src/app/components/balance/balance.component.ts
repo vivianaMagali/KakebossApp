@@ -23,7 +23,6 @@ export class BalanceComponent implements OnInit {
         totalIncomes.forEach(function (object) {
           //console.log("amount "+aux$);
           return aux$ += +object.data().amount;
-          
         });
         //console.log("amounts "+aux$);
         return aux$;
@@ -40,8 +39,6 @@ export class BalanceComponent implements OnInit {
         //console.log("amounts "+aux$);
         return aux$;
       });
-
-      
       console.log("resultado res ",getExample());
     }
 
@@ -53,33 +50,20 @@ export class BalanceComponent implements OnInit {
         return value;
       });
       
-      
       var expenses=localExpenses.then((value) => {
         console.log("suma gastos ",value);
         return value;
       });
 
       var resultA = await income;
-      
       var resultB = await expenses;
       
       // this.diference=resultA-resultB;
       // console.log("resultado ",this.diference);
       return resultA-resultB;;
   }
-
-
-
     console.log("resultado ",this.diference);
     console.log("res");
   }
 
-
-
-      
-      // console.log("incomes =", localIncome);
-      // // console.log("totalIncomes=", this.incomeVal);
-      // console.log("outcomes =", localOutcome);
-    // console.log("total => ", localIncome - localOutcome);
-  
 }

@@ -29,4 +29,8 @@ export class ToolbarComponent implements OnInit {
     this.router.navigate(['/profile']);
   }
 
+  poll(){
+    this.router.navigate(['poll']);
+  }
+
 }
