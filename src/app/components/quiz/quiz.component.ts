@@ -9,7 +9,4 @@ import { Component } from '@angular/core';
 
 export class quiz{
 
-favoriteSeason: string;
-seasons: string[] = ['Winter', 'Spring', 'Summer', 'Autumn'];
-
 }
