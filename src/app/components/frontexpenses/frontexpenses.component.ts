@@ -16,8 +16,6 @@ import * as firebase from 'firebase';
 export class frontExpensesComponent {
 
     public items: Observable<any[]>;
-
-
     panelOpenState = false;
     
 

@@ -14,7 +14,7 @@ import * as firebase from 'firebase';
 })
 export class frontIncomesComponent {
     items: Observable<any[]>;
-
+    panelOpenState = false;
     constructor(private userService: UserService,private router: Router,firestore: AngularFirestore) {
         var user = this.userService.getCurrentUser();
         if (user) {

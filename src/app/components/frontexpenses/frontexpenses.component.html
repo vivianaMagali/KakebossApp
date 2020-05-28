@@ -21,56 +21,19 @@
                     <mat-panel-description>
                     {{item.amount}}€
                     </mat-panel-description>
-                    <button mat-button (click)="removeExpense(item.eventId)"> Delete</button>
+                    <button mat-icon-button color="primary"  (click)="removeExpense(item.eventId)" ><mat-icon>delete</mat-icon></button>
                 </mat-expansion-panel-header>
                     
                 <mat-list role="list">
-                    <mat-list-item role="listitem">Nombre: {{item.name_expense}}</mat-list-item>
-                    <mat-list-item role="listitem">Category: {{item.category}}</mat-list-item>
-                    <mat-list-item role="listitem">Date: {{item.date}}</mat-list-item>
-                    <mat-list-item role="listitem">Amount: {{item.amount}}€</mat-list-item>
+                    <mat-list-item role="listitem"><b>Name:</b> {{item.name_expense}}</mat-list-item>
+                    <mat-list-item role="listitem"><b>Category:</b>  {{item.category}}</mat-list-item>
+                    <mat-list-item role="listitem"><b>Date:</b> {{item.date}}</mat-list-item>
+                    <mat-list-item role="listitem"><b>Amount:</b> {{item.amount}}€</mat-list-item>
                 </mat-list>
 
-           
             </mat-expansion-panel>
         </div>
-        <!-- <mat-expansion-panel (opened)="panelOpenState = true"
-                             (closed)="panelOpenState = false">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Self aware panel
-            </mat-panel-title>
-            <mat-panel-description>
-              Currently I am {{panelOpenState ? 'open' : 'closed'}}
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-          <p>I'm visible because I am open</p>
-        </mat-expansion-panel> -->
-      </mat-accordion>
-            <!-- <div class="expenseList">  
-
-                <div class="expense"  *ngFor="let item of items | async">
-                        <mat-drawer-content>
-                            <div class="info">
-                                <ul>
-                                    <li class="text">
-                                    {{item.name_expense}}
-                                    </li>
-                                    <li class="text">
-                                        {{item.date}}
-                                    </li>
-                                </ul>
-                    
-                            </div>
-                            <li class="text">
-                                {{item.amount}}€
-                            </li>
-                        <button mat-button (click)="showExpense(item.eventId)"> show Complete</button>
-                        <button mat-button (click)="removeExpense(item.eventId)"> Delete</button>
-                    </mat-drawer-content>   
-                 </div> 
-               
-            </div>   -->
+    </mat-accordion>
            
 </mat-card>
 
