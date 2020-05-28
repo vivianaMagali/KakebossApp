@@ -1,5 +1,5 @@
-.expenses-card{
-    max-width: 400px;
+/* .expenses-card{
+    width: auto;
     height: auto;
     margin: 10px;
 }
@@ -33,4 +33,14 @@ mat-card-header{
     font-weight: 500;
 }
 
+mat-drawer-content {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  } */
 
+
+  .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }

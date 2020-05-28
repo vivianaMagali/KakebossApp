@@ -16,7 +16,10 @@ import * as firebase from 'firebase';
 export class frontExpensesComponent {
 
     public items: Observable<any[]>;
-   
+
+
+    panelOpenState = false;
+    
 
     constructor(private userService: UserService,private router: Router,firestore: AngularFirestore) {
         var user = this.userService.getCurrentUser();
@@ -40,10 +43,13 @@ export class frontExpensesComponent {
                     console.log("Document successfully deleted!");
                 }).catch(function(error) {
                     console.error("Error removing document: ", error);
-                });
-            
+                });   
         }
-        
+    }
+
+
+    showExpense(eventId){
+
     }
 
 
