@@ -101,7 +101,7 @@ import { BalanceComponent } from './components/balance/balance.component';
   
   ],
   exports: [
-    MatFormFieldModule
+    MatFormFieldModule,
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
