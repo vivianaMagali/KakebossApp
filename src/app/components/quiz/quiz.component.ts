@@ -41,6 +41,7 @@ export class quiz{
                 comments:this.comments
             })
         }
+        this.message();
         this.router.navigate(['/loggedMain']);
         
     }
