@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { db } from 'src/app/services/utils/firebase';
 import * as firebase from 'firebase';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-expectations',
@@ -18,8 +20,7 @@ export class ExpectationsComponent implements OnInit {
   promises: string;
   date: string;
 
-  constructor() { }
-
+  constructor(private router: Router) {}
   ngOnInit(): void {
   }
 
@@ -45,6 +46,12 @@ export class ExpectationsComponent implements OnInit {
       })
     }
     console.log("añadi expectativa");
+    this.router.navigate(['/loggedMain']);
+  }
+
+  cancel(){
+    //enroutamiento a pagina principal
+    this.router.navigate(['/loggedMain']); 
   }
 
 }

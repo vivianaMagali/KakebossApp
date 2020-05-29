@@ -33,4 +33,8 @@ export class ToolbarComponent implements OnInit {
     this.router.navigate(['poll']);
   }
 
+  expectations(){
+    this.router.navigate(['expectation']);
+  }
+
 }
