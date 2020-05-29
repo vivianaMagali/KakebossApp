@@ -2,22 +2,28 @@ import { Component, OnInit, NgZone } from '@angular/core';
 import { db } from 'src/app/services/utils/firebase';
 import * as firebase from 'firebase';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-incomes',
   templateUrl: './incomes.component.html',
   styleUrls: ['./incomes.component.css']
 })
-export class IncomesComponent implements OnInit {
+export class IncomesComponent  {
 
   name_income: string;
   amount: number;
   date:string;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+    private _snackBar: MatSnackBar) { }
 
-  ngOnInit(): void {
-  }
+    message(){
+      console.log("hice click en login"); 
+      this._snackBar.open( "¡nuevo ingreso añadido!", "", {
+        duration: 2000,
+      });
+    }
 
   addIncome() {
     var user = firebase.auth().currentUser;
@@ -31,12 +37,11 @@ export class IncomesComponent implements OnInit {
         })
       }
     // })
-    this.router.navigate(['/inicio']);
+    this.router.navigate(['/loggedMain']);
   }
 
   cancel(){
-    //enroutamiento a pagina principal
-    this.router.navigate(['/inicio']); 
+    this.router.navigate(['/loggedMain']); 
   }
 
 

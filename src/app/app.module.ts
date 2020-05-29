@@ -35,6 +35,11 @@ import { MatTabsModule } from '@angular/material/tabs';
 import {MatTableModule} from '@angular/material/table';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatDialogModule} from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 /** OUR COMPONENTS */
 
@@ -47,12 +52,17 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { SignoutComponent } from './components/signout/signout.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
-
+import { quiz } from './components/quiz/quiz.component'
 import { UserService } from './services/userService';
 import { MainComponent } from './main/main.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { BalanceComponent } from './components/balance/balance.component';
+<<<<<<< HEAD
 import { ExpectationsComponent } from './components/expectations/expectations.component';
+=======
+import { DialogComponent } from './components/dialog/dialog.component';
+
+>>>>>>> 6422a0a431ecf16cd380dc461079c1c37b269f59
 
 
 
@@ -71,7 +81,11 @@ import { ExpectationsComponent } from './components/expectations/expectations.co
     ToolbarComponent,
     frontUUComponent,
     BalanceComponent,
+<<<<<<< HEAD
     ExpectationsComponent,
+=======
+    quiz,
+>>>>>>> 6422a0a431ecf16cd380dc461079c1c37b269f59
   ],
   imports: [
     BrowserModule,
@@ -99,10 +113,21 @@ import { ExpectationsComponent } from './components/expectations/expectations.co
     MatNativeDateModule,
     MatTabsModule,
     MatTableModule,
-  
+    MatSnackBarModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
+    MatSidenavModule,
+    MatExpansionModule,
   ],
   exports: [
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatRadioModule,
+    MatSnackBarModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatSidenavModule,
+    MatExpansionModule,
+    BrowserAnimationsModule,
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

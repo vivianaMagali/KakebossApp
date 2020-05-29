@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { db } from 'src/app/services/utils/firebase';
 import * as firebase from 'firebase';
 import {  Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 
@@ -10,7 +11,7 @@ import {  Router } from '@angular/router';
   templateUrl: './expenses.component.html',
   styleUrls: ['./expenses.component.css']
 })
-export class ExpensesComponent implements OnInit {
+export class ExpensesComponent {
  
   
   name_expense: string;
@@ -19,12 +20,16 @@ export class ExpensesComponent implements OnInit {
   date:string;
   categories: string[] = ['Supervivencia', 'Ocio y vicio', 'Cultura', 'Extras'];
 
-  constructor(private router: Router) { 
+  constructor(private router: Router,
+    private _snackBar: MatSnackBar) { 
     
   }
 
-  ngOnInit(): void {
-    
+  message(){
+    console.log("hice click en login"); 
+    this._snackBar.open( "¡nuevo gasto añadido!", "", {
+      duration: 2000,
+    });
   }
 
 
@@ -34,9 +39,7 @@ export class ExpensesComponent implements OnInit {
     console.log("hice click en addExpense");
     // firebase.auth().onAuthStateChanged(function(user){
       console.log("user "+user);
-     
         if (user) {
-        
         db.collection("usuarios").doc(user.uid).collection("expenses").add({
               name_expense: this.name_expense,
               amount: this.amount,
@@ -44,13 +47,13 @@ export class ExpensesComponent implements OnInit {
               date:this.date,              
         })
       }
-      this.router.navigate(['/inicio']);
+      this.router.navigate(['/loggedMain']);
     
   }
 
   cancel(){
     //enroutamiento a pagina principal
-    this.router.navigate(['/inicio']); 
+    this.router.navigate(['/loggedMain']); 
   }
 
 

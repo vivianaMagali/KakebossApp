@@ -1,29 +1,34 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit, NgZone, Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
  selector: 'app-login',
  templateUrl: './login.component.html',
- styleUrls: ['./login.component.css']
+ styleUrls: ['./login.component.css'],
 })
 
-export class LoginComponent implements OnInit {
+@Injectable()
+export class LoginComponent {
   errorMessage = '';
   username:string;
   password:string;
 
  constructor(private afAuth: AngularFireAuth,
    private router: Router,
-   private ngZone: NgZone) { }
- 
-  ngOnInit() { }
+   private _snackBar: MatSnackBar) {
+ }
 
+
+ message(){
+  console.log("hice click en login"); 
+  this._snackBar.open( "¡Bienvenido a Kakeboss!", "", {
+    duration: 2000,
+  });
+}
 
   login() { 
-    console.log("hice click en login"); 
-    
     this.afAuth.signInWithEmailAndPassword(this.username, this.password).then(() => {
       this.router.navigate(['/loggedMain']);
     }).catch(response => {

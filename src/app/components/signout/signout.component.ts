@@ -2,25 +2,26 @@ import { Component, OnInit, NgZone } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import * as firebase from 'firebase';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-signout',
   templateUrl: './signout.component.html',
   styleUrls: ['./signout.component.css']
 })
-export class SignoutComponent implements OnInit {
+export class SignoutComponent {
 
   constructor(private afAuth: AngularFireAuth,
   private router: Router,
-  private ngZone: NgZone) { }
+  private ngZone: NgZone,
+  private _snackBar: MatSnackBar) { }
 
-  ngOnInit(): void {
-  //   this.afAuth.user.subscribe(user => {
-  //     if (user==null) {
-  //       this.ngZone.run(() => {
-  //         this.router.navigate(['/inicio-sin-login']);
-  //     })
-  // }})
+
+  message(){
+    console.log("hice click en login"); 
+    this._snackBar.open( "¡Sesión cerrada correctamente!", "", {
+      duration: 2000,
+    });
   }
 
   signOutUser(){
