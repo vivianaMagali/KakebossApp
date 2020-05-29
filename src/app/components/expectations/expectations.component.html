@@ -1,0 +1,37 @@
+<app-toolbar></app-toolbar>
+<div class="container">
+  <mat-label class="title">Set expectations</mat-label>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Set your initial incomes</mat-label>
+    <input type="number" name="init_money" matInput [(ngModel)]="init_money" required>
+  </mat-form-field>€
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Set your fixed expenses</mat-label>
+    <input type="number" name="sure_expense" matInput [(ngModel)]="sure_expense" required>
+  </mat-form-field>€
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Expenses description</mat-label>
+    <input type="text" name="sure_expense_desc" matInput [(ngModel)]="sure_expense_desc" required>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>How much would you like to save?</mat-label>
+    <input type="number" name="savings" matInput [(ngModel)]="savings" required>
+  </mat-form-field>€
+
+  <mat-form-field class="example-full-width">
+    <mat-label>What goals do you you want to acomplish?</mat-label>
+    <input type="text" name="goals" matInput [(ngModel)]="goals" required>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>What promises do have? </mat-label>
+    <input type="text" name="promises" matInput [(ngModel)]="promises" required>
+  </mat-form-field>
+
+  <button mat-button color="primary" (click)="addExpectation()">Accept</button>
+  <button mat-button color="primary" (click)="cancel()">Cancel</button>
+</div>

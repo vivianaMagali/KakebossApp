@@ -8,6 +8,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { SignupComponent } from './components/signup/signup.component';
 import { frontUUComponent } from './components/frontUnloggedUser/frontUnloggedUser.component';
 import { quiz } from './components/quiz/quiz.component'
+import { ExpectationsComponent } from './components/expectations/expectations.component'
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'profile', component: UserProfileComponent},
   { path: 'signup', component: SignupComponent},
   { path: 'unloggedMain', component: frontUUComponent},
-  { path: 'poll', component: quiz }
+  { path: 'poll', component: quiz },
+  { path: 'expectation', component: ExpectationsComponent }
 ];
 
 @NgModule({

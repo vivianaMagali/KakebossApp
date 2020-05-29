@@ -1,0 +1,26 @@
+.container{
+    width: 50%;
+    margin: auto;
+    display: grid;
+    padding: 30px;
+    margin-top: 150px;
+    background-color: rgb(245, 245, 245);
+    box-shadow: 2px 2px 10px rgb(223, 223, 223);  
+}
+
+.title{
+    font-size: 20px;
+    justify-self: center;
+}
+
+button:hover{
+    background-color:  rgba(103,58,183, 0.2);
+}
+
+.text:focus{
+    background-color: rgba(103,58,183, 0.2);
+}
+
+.mat-radio-button {
+    margin: 0 12px;
+  }

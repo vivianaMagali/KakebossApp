@@ -57,6 +57,7 @@ import { UserService } from './services/userService';
 import { MainComponent } from './main/main.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { BalanceComponent } from './components/balance/balance.component';
+import { ExpectationsComponent } from './components/expectations/expectations.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 
 
@@ -77,6 +78,7 @@ import { DialogComponent } from './components/dialog/dialog.component';
     ToolbarComponent,
     frontUUComponent,
     BalanceComponent,
+    ExpectationsComponent,
     quiz,
   ],
   imports: [

@@ -3,12 +3,12 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\components\\balance",
-    "\\src\\app\\components\\incomes",
+    "\\src\\app\\components",
+    "\\src\\app\\components\\frontincomes",
     "\\src\\app\\services",
     "\\src\\app\\services\\utils",
     "\\src\\environments"
   ],
-  "SelectedNode": "\\src\\app\\app.component.spec.ts",
+  "SelectedNode": "\\src\\app\\components\\frontincomes\\frontincomes.component.ts",
   "PreviewInSolutionExplorer": false
 }
