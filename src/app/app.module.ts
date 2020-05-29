@@ -57,12 +57,9 @@ import { UserService } from './services/userService';
 import { MainComponent } from './main/main.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { BalanceComponent } from './components/balance/balance.component';
-<<<<<<< HEAD
 import { ExpectationsComponent } from './components/expectations/expectations.component';
-=======
 import { DialogComponent } from './components/dialog/dialog.component';
 
->>>>>>> 6422a0a431ecf16cd380dc461079c1c37b269f59
 
 
 
@@ -81,11 +78,8 @@ import { DialogComponent } from './components/dialog/dialog.component';
     ToolbarComponent,
     frontUUComponent,
     BalanceComponent,
-<<<<<<< HEAD
     ExpectationsComponent,
-=======
     quiz,
->>>>>>> 6422a0a431ecf16cd380dc461079c1c37b269f59
   ],
   imports: [
     BrowserModule,

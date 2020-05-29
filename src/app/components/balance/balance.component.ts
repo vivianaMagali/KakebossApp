@@ -39,14 +39,10 @@ export class BalanceComponent implements OnInit {
         //console.log("amounts "+aux$);
         return aux$;
       });
-<<<<<<< HEAD
 
       
       console.log('work?', await getExample());
       return await getExample();
-=======
-      console.log("resultado res ",getExample());
->>>>>>> 6422a0a431ecf16cd380dc461079c1c37b269f59
     }
 
 
@@ -64,18 +60,8 @@ export class BalanceComponent implements OnInit {
 
       var resultA = await income;
       var resultB = await expenses;
-<<<<<<< HEAD
       return await (resultA-resultB);
     }
-=======
-      
-      // this.diference=resultA-resultB;
-      // console.log("resultado ",this.diference);
-      return resultA-resultB;;
-  }
-    console.log("resultado ",this.diference);
-    console.log("res");
->>>>>>> 6422a0a431ecf16cd380dc461079c1c37b269f59
   }
 
 }
